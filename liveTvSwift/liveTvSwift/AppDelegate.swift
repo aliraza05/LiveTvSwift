@@ -41,6 +41,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    // Mark: Helper Methods
+    func loadSplashScreenWithConfiguration(configArray: [AnyObject])
+    {
+        
+        let myVC = Bundle.main.loadNibNamed("SplashViewController", owner: self, options: nil)![0] as? SplashViewController
+
+//        myVC?.configuration = configArray
+//        
+//        webView.configuration = configuration;
+//        
+//        webView.view.frame = APP_DELEGATE.window.frame;
+//        
+//        [APP_DELEGATE.window.rootViewController addChildViewController:webView];
+//        
+//        [APP_DELEGATE.window.rootViewController.view addSubview:webView.view];
+//        [APP_DELEGATE.window.rootViewController.view bringSubviewToFront:webView.view];
+//        APP_DELEGATE.window.rootViewController.view.clipsToBounds = NO;
+//        
+//        [webView didMoveToParentViewController:APP_DELEGATE.window.rootViewController];
+    }
 
 }
 
