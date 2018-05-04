@@ -14,29 +14,29 @@ class SplashViewController: UIViewController {
     @IBOutlet weak var heading_lbl: UILabel!
     @IBOutlet weak var download_btn: UIButton!
     
-    var configuration: [[String:String]] = [[ : ]]
+    var configuration: JSON = []
 
     var splashTime:Float = 5.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        for config in  configuration
+        for config in  configuration["application_configurations"].arrayValue
         {
             
-            let key = config["key"]
-
+            let key = config["key"].stringValue
+            
             if key == "Heading"
             {
-                heading_lbl.text = config["value"]
+                heading_lbl.text = config["value"].stringValue
             }
             if key == "DetailText"
             {
-                description_lbl.text = config["value"]
+                description_lbl.text = config["value"].stringValue
             }
             if key == "ButtonText"
             {
-                let title = "   " + config["value"]! + "   "
+                let title = "    \(config["value"].stringValue)     "
                 download_btn.setTitle(title, for: UIControlState.normal)
             }
             if key == "ShowButton"
@@ -46,11 +46,13 @@ class SplashViewController: UIViewController {
             }
             if key == "Time"
             {
-                splashTime = (config["value"]! as NSString).floatValue
+                splashTime = config["value"].floatValue
             }
             
         }
-        
+//        self.perform(#selector(hideSplash), with: nil, afterDelay: TimeInterval(splashTime))
+
+        self.perform(#selector(hideSplash), with: nil, afterDelay: 3.0)
         // Do any additional setup after loading the view.
     }
 
@@ -69,7 +71,15 @@ class SplashViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    @IBAction func downloadAction(_ sender: Any) {
+    @IBAction func downloadAction(_ sender: Any)
+    {
+        hideSplash()
+    }
+    
+    @objc func hideSplash()
+    {
+        self.view.removeFromSuperview()
+        self.removeFromParentViewController()
     }
     
 }

@@ -42,24 +42,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // Mark: Helper Methods
-    func loadSplashScreenWithConfiguration(configArray: [AnyObject])
+    func loadSplashScreenWithConfiguration(json: JSON)
     {
-        
-        let myVC = Bundle.main.loadNibNamed("SplashViewController", owner: self, options: nil)![0] as? SplashViewController
-
-//        myVC?.configuration = configArray
-//        
-//        webView.configuration = configuration;
-//        
-//        webView.view.frame = APP_DELEGATE.window.frame;
-//        
-//        [APP_DELEGATE.window.rootViewController addChildViewController:webView];
-//        
-//        [APP_DELEGATE.window.rootViewController.view addSubview:webView.view];
-//        [APP_DELEGATE.window.rootViewController.view bringSubviewToFront:webView.view];
-//        APP_DELEGATE.window.rootViewController.view.clipsToBounds = NO;
-//        
-//        [webView didMoveToParentViewController:APP_DELEGATE.window.rootViewController];
+        let myVC = SplashViewController(nibName: "SplashViewController", bundle: nil)
+        myVC.configuration = json
+        window?.rootViewController?.addChildViewController(myVC)
+        window?.rootViewController?.view.addSubview(myVC.view)
+        window?.rootViewController?.view.bringSubview(toFront: myVC.view)
+        window?.rootViewController?.view.clipsToBounds = false
+        myVC.didMove(toParentViewController: window?.rootViewController)
     }
 
 }

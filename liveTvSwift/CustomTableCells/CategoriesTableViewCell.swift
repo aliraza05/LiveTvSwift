@@ -10,8 +10,12 @@ import UIKit
 
 class CategoriesTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var categoryImageView: UIImageView!
+    @IBOutlet weak var name_lbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+        categoryImageView.layer.cornerRadius = 15
+        categoryImageView.clipsToBounds = true
         // Initialization code
     }
 
@@ -21,4 +25,9 @@ class CategoriesTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func loadChannel(event: Event)
+    {
+        name_lbl.text = event.name
+        
+    }
 }

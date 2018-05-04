@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FB38459420932CE900123B27 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB38459220932CE900123B27 /* EventViewController.swift */; };
-		FB38459520932CE900123B27 /* ChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB38459320932CE900123B27 /* ChannelsViewController.swift */; };
+		FB38459520932CE900123B27 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB38459320932CE900123B27 /* CategoriesViewController.swift */; };
 		FB914D32209B1DAF008F47EA /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB914D31209B1DAF008F47EA /* APIManager.swift */; };
 		FB914D36209B1F48008F47EA /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB914D35209B1F48008F47EA /* SwiftyJSON.swift */; };
 		FB914D3A209B2636008F47EA /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB914D38209B2636008F47EA /* EventTableViewCell.swift */; };
@@ -25,6 +25,9 @@
 		FBB5DD5720920A9900CE51FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBB5DD5520920A9900CE51FE /* LaunchScreen.storyboard */; };
 		FBB5DD6220920A9900CE51FE /* liveTvSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB5DD6120920A9900CE51FE /* liveTvSwiftTests.swift */; };
 		FBB5DD6D20920A9900CE51FE /* liveTvSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB5DD6C20920A9900CE51FE /* liveTvSwiftUITests.swift */; };
+		FBBBDEE2209C409D00CAEAA8 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBBDEE1209C409D00CAEAA8 /* Parser.swift */; };
+		FBBBDEE4209C41CC00CAEAA8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBBDEE3209C41CC00CAEAA8 /* Constants.swift */; };
+		FBBBDEE7209C8E4F00CAEAA8 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBBDEE6209C8E4F00CAEAA8 /* Toast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +49,7 @@
 
 /* Begin PBXFileReference section */
 		FB38459220932CE900123B27 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
-		FB38459320932CE900123B27 /* ChannelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelsViewController.swift; sourceTree = "<group>"; };
+		FB38459320932CE900123B27 /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		FB914D31209B1DAF008F47EA /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		FB914D35209B1F48008F47EA /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		FB914D38209B2636008F47EA /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
@@ -69,6 +72,9 @@
 		FBB5DD6820920A9900CE51FE /* liveTvSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = liveTvSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB5DD6C20920A9900CE51FE /* liveTvSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = liveTvSwiftUITests.swift; sourceTree = "<group>"; };
 		FBB5DD6E20920A9900CE51FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBBBDEE1209C409D00CAEAA8 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		FBBBDEE3209C41CC00CAEAA8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FBBBDEE6209C8E4F00CAEAA8 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				FB38459220932CE900123B27 /* EventViewController.swift */,
-				FB38459320932CE900123B27 /* ChannelsViewController.swift */,
+				FB38459320932CE900123B27 /* CategoriesViewController.swift */,
 				FB914D45209B522D008F47EA /* SplashViewController.swift */,
 				FB914D46209B522D008F47EA /* SplashViewController.xib */,
 			);
@@ -119,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				FB914D31209B1DAF008F47EA /* APIManager.swift */,
+				FBBBDEE1209C409D00CAEAA8 /* Parser.swift */,
 			);
 			path = "API Manager";
 			sourceTree = "<group>";
@@ -126,6 +133,7 @@
 		FB914D33209B1F48008F47EA /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				FBBBDEE5209C8E4F00CAEAA8 /* Toast */,
 				FB914D34209B1F48008F47EA /* SwiftyJSON */,
 			);
 			path = ThirdParty;
@@ -187,6 +195,7 @@
 		FBB5DD4920920A9900CE51FE /* liveTvSwift */ = {
 			isa = PBXGroup;
 			children = (
+				FBBBDEE3209C41CC00CAEAA8 /* Constants.swift */,
 				FBB5DD4A20920A9900CE51FE /* AppDelegate.swift */,
 				FBB5DD5020920A9900CE51FE /* Main.storyboard */,
 				FBB5DD5320920A9900CE51FE /* Assets.xcassets */,
@@ -212,6 +221,14 @@
 				FBB5DD6E20920A9900CE51FE /* Info.plist */,
 			);
 			path = liveTvSwiftUITests;
+			sourceTree = "<group>";
+		};
+		FBBBDEE5209C8E4F00CAEAA8 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				FBBBDEE6209C8E4F00CAEAA8 /* Toast.swift */,
+			);
+			path = Toast;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,16 +368,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBBBDEE7209C8E4F00CAEAA8 /* Toast.swift in Sources */,
 				FB914D42209B33A6008F47EA /* Event.swift in Sources */,
+				FBBBDEE2209C409D00CAEAA8 /* Parser.swift in Sources */,
 				FB914D3A209B2636008F47EA /* EventTableViewCell.swift in Sources */,
 				FB914D32209B1DAF008F47EA /* APIManager.swift in Sources */,
-				FB38459520932CE900123B27 /* ChannelsViewController.swift in Sources */,
+				FB38459520932CE900123B27 /* CategoriesViewController.swift in Sources */,
 				FBB5DD4B20920A9900CE51FE /* AppDelegate.swift in Sources */,
 				FB914D36209B1F48008F47EA /* SwiftyJSON.swift in Sources */,
 				FB914D3E209B2BB7008F47EA /* CategoriesTableViewCell.swift in Sources */,
 				FB914D44209B3696008F47EA /* Channel.swift in Sources */,
 				FB38459420932CE900123B27 /* EventViewController.swift in Sources */,
 				FB914D47209B522D008F47EA /* SplashViewController.swift in Sources */,
+				FBBBDEE4209C41CC00CAEAA8 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  SecondViewController.swift
 //  liveTvSwift
 //
 //  Created by Ali Raza on 26/04/2018.
@@ -8,21 +8,17 @@
 
 import UIKit
 
-class EventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CategoriesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
 
-    @IBOutlet weak var tableViewEvent: UITableView!
-    @IBOutlet weak var dateTime_lbl: UILabel!
-    
+    @IBOutlet weak var channelTableView: UITableView!
+
+    let cellReuseIdentifier = "CategoriesTableViewCell"
     var tableDataArray : [Event] = []
-    var isFirstTime : Bool = true
-    
-    let cellReuseIdentifier = "EventTableViewCell"
 
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableViewEvent.register(UINib(nibName: "EventTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
+        channelTableView.register(UINib(nibName: "CategoriesTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
 
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -32,14 +28,11 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         fetchAppData()
     }
-    override func didReceiveMemoryWarning()
-    {
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
         // Dispose of any resources that can be recreated.
     }
-    
-    
+
     // MARK: Netwrok Calling
     func fetchAppData()
     {
@@ -47,51 +40,30 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         APIManager.sharedInstance.fetchDataWithAppID(appID: 5, onSuccess: { json in
             
             DispatchQueue.main.async
-            {
-                self.view.hideToastActivity()
+                {
+                    self.view.hideToastActivity()
             }
-
+            
             self.parseNetworkDataAndUpdateUI(json: json)
         }, onFailure: { error in
             let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
             self.show(alert, sender: nil)
             DispatchQueue.main.async
-            {
-                self.view.hideToastActivity()
+                {
+                    self.view.hideToastActivity()
             }
-            
         })
     }
-    
     // MARK: Data Parsing
     func parseNetworkDataAndUpdateUI(json: JSON)
     {
-        if isFirstTime
-        {
-            for config in json["application_configurations"].arrayValue
-            {
-                let key = config["key"].stringValue
-                if key == "ShowSplash"
-                {
-                    let showSplash:Bool = config["value"].boolValue
-                    if showSplash
-                    {
-                        DispatchQueue.main.async
-                        {
-                            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                            appDelegate.loadSplashScreenWithConfiguration(json: json)
-                        }
-                        isFirstTime = false
-                    }
-                }
-            }
-        }
+        
         //GetEventsFrom respnse is the parser function of Response class
         tableDataArray = getEventsFromRespns(json: json)
         DispatchQueue.main.async
-        {
-            self.tableViewEvent.reloadData()
+            {
+                self.channelTableView.reloadData()
         }
     }
     
@@ -102,13 +74,13 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell: EventTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! EventTableViewCell
-
+        let cell: CategoriesTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! CategoriesTableViewCell
+        
         // Configure the cell...
         
         let event: Event = tableDataArray[indexPath.row]
         
-        cell.loadEvent(event: event)
+        cell.loadChannel(event: event)
         
         return cell
     }

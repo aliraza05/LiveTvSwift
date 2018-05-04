@@ -30,6 +30,7 @@ class APIManager: NSObject {
     let session = URLSession.shared
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: params, options: JSONSerialization.WritingOptions())
+            
             let task = session.dataTask(with: request as URLRequest, completionHandler: {data, response, error -> Void in
                 if(error != nil){
                     onFailure(error!)
@@ -41,6 +42,9 @@ class APIManager: NSObject {
             task.resume()
         } catch _ {
             print ("Oops something happened buddy")
+            let errorTemp = NSError(domain:"Oops something happened buddy", code:404, userInfo:nil)
+            onFailure(errorTemp)
+
         }
 }
 
