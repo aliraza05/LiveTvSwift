@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		FB38459420932CE900123B27 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB38459220932CE900123B27 /* EventViewController.swift */; };
 		FB38459520932CE900123B27 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB38459320932CE900123B27 /* CategoriesViewController.swift */; };
+		FB639901209C97FB0075BA19 /* ChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB639900209C97FB0075BA19 /* ChannelsViewController.swift */; };
+		FB639904209C99830075BA19 /* ChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB639902209C99830075BA19 /* ChannelTableViewCell.swift */; };
+		FB639905209C99830075BA19 /* ChannelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB639903209C99830075BA19 /* ChannelTableViewCell.xib */; };
 		FB914D32209B1DAF008F47EA /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB914D31209B1DAF008F47EA /* APIManager.swift */; };
 		FB914D36209B1F48008F47EA /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB914D35209B1F48008F47EA /* SwiftyJSON.swift */; };
 		FB914D3A209B2636008F47EA /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB914D38209B2636008F47EA /* EventTableViewCell.swift */; };
@@ -50,6 +53,9 @@
 /* Begin PBXFileReference section */
 		FB38459220932CE900123B27 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		FB38459320932CE900123B27 /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		FB639900209C97FB0075BA19 /* ChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsViewController.swift; sourceTree = "<group>"; };
+		FB639902209C99830075BA19 /* ChannelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelTableViewCell.swift; sourceTree = "<group>"; };
+		FB639903209C99830075BA19 /* ChannelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelTableViewCell.xib; sourceTree = "<group>"; };
 		FB914D31209B1DAF008F47EA /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		FB914D35209B1F48008F47EA /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		FB914D38209B2636008F47EA /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
@@ -107,6 +113,7 @@
 			children = (
 				FB38459220932CE900123B27 /* EventViewController.swift */,
 				FB38459320932CE900123B27 /* CategoriesViewController.swift */,
+				FB639900209C97FB0075BA19 /* ChannelsViewController.swift */,
 				FB914D45209B522D008F47EA /* SplashViewController.swift */,
 				FB914D46209B522D008F47EA /* SplashViewController.xib */,
 			);
@@ -154,6 +161,8 @@
 				FB914D39209B2636008F47EA /* EventTableViewCell.xib */,
 				FB914D3C209B2BB7008F47EA /* CategoriesTableViewCell.swift */,
 				FB914D3D209B2BB7008F47EA /* CategoriesTableViewCell.xib */,
+				FB639902209C99830075BA19 /* ChannelTableViewCell.swift */,
+				FB639903209C99830075BA19 /* ChannelTableViewCell.xib */,
 			);
 			path = CustomTableCells;
 			sourceTree = "<group>";
@@ -344,6 +353,7 @@
 				FB914D3F209B2BB7008F47EA /* CategoriesTableViewCell.xib in Resources */,
 				FBB5DD5420920A9900CE51FE /* Assets.xcassets in Resources */,
 				FBB5DD5220920A9900CE51FE /* Main.storyboard in Resources */,
+				FB639905209C99830075BA19 /* ChannelTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,11 +386,13 @@
 				FB38459520932CE900123B27 /* CategoriesViewController.swift in Sources */,
 				FBB5DD4B20920A9900CE51FE /* AppDelegate.swift in Sources */,
 				FB914D36209B1F48008F47EA /* SwiftyJSON.swift in Sources */,
+				FB639901209C97FB0075BA19 /* ChannelsViewController.swift in Sources */,
 				FB914D3E209B2BB7008F47EA /* CategoriesTableViewCell.swift in Sources */,
 				FB914D44209B3696008F47EA /* Channel.swift in Sources */,
 				FB38459420932CE900123B27 /* EventViewController.swift in Sources */,
 				FB914D47209B522D008F47EA /* SplashViewController.swift in Sources */,
 				FBBBDEE4209C41CC00CAEAA8 /* Constants.swift in Sources */,
+				FB639904209C99830075BA19 /* ChannelTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

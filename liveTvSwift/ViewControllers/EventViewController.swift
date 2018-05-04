@@ -112,5 +112,21 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        let event: Event = tableDataArray[indexPath.row]
+        performSegue(withIdentifier: "showCategoryChannels", sender: event)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if (segue.identifier == "showCategoryChannels") {
+            // pass data to next view
+            let channelVC = segue.destination as! ChannelsViewController
+            channelVC.event = sender as? Event
+        }
+    }
 }
 

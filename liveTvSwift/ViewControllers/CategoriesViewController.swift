@@ -10,7 +10,7 @@ import UIKit
 
 class CategoriesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
 
-    @IBOutlet weak var channelTableView: UITableView!
+    @IBOutlet weak var categoryTableView: UITableView!
 
     let cellReuseIdentifier = "CategoriesTableViewCell"
     var tableDataArray : [Event] = []
@@ -18,7 +18,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        channelTableView.register(UINib(nibName: "CategoriesTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
+        categoryTableView.register(UINib(nibName: "CategoriesTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
 
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -40,7 +40,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         APIManager.sharedInstance.fetchDataWithAppID(appID: 5, onSuccess: { json in
             
             DispatchQueue.main.async
-                {
+            {
                     self.view.hideToastActivity()
             }
             
@@ -50,7 +50,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
             alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
             self.show(alert, sender: nil)
             DispatchQueue.main.async
-                {
+            {
                     self.view.hideToastActivity()
             }
         })
@@ -63,7 +63,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         tableDataArray = getEventsFromRespns(json: json)
         DispatchQueue.main.async
             {
-                self.channelTableView.reloadData()
+                self.categoryTableView.reloadData()
         }
     }
     
@@ -84,5 +84,17 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let event: Event = tableDataArray[indexPath.row]
+        performSegue(withIdentifier: "showCategoryChannels", sender: event)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+//        let something = segue.destination as! someViewController
+//        something.aVariable = anotherVariable
+    }
+    
 }
 

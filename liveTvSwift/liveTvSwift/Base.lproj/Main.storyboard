@@ -65,10 +65,10 @@
             </objects>
             <point key="canvasLocation" x="1524" y="-720"/>
         </scene>
-        <!--Categories View Controller-->
+        <!--Channels View Controller-->
         <scene sceneID="xPj-Qi-JJU">
             <objects>
-                <viewController id="jYp-qN-eWJ" customClass="CategoriesViewController" sceneMemberID="viewController">
+                <viewController id="jYp-qN-eWJ" customClass="ChannelsViewController" customModule="liveTvSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mzu-9E-6ud">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,6 +94,10 @@
                                         <constraint firstItem="jGg-Rc-6OW" firstAttribute="top" secondItem="YzJ-ck-vPz" secondAttribute="top" constant="10" id="c6X-kW-yj7"/>
                                     </constraints>
                                 </view>
+                                <connections>
+                                    <outlet property="dataSource" destination="jYp-qN-eWJ" id="7Wg-2H-7bR"/>
+                                    <outlet property="delegate" destination="jYp-qN-eWJ" id="KO4-PB-rdM"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -106,7 +110,8 @@
                         <viewLayoutGuide key="safeArea" id="0Vd-pz-6CA"/>
                     </view>
                     <connections>
-                        <outlet property="channelName" destination="jGg-Rc-6OW" id="Nqu-NR-KGi"/>
+                        <outlet property="channelName_lbl" destination="jGg-Rc-6OW" id="gFg-8f-Bn3"/>
+                        <outlet property="tableView_channel" destination="Vgy-Pd-jjx" id="kKE-3B-qkM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dWF-Om-ezJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -142,7 +147,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Categories" id="adN-x0-X3q"/>
                     <connections>
-                        <outlet property="channelTableView" destination="Pkp-Yg-Qld" id="sFm-1x-ZgS"/>
+                        <outlet property="categoryTableView" destination="Pkp-Yg-Qld" id="sFm-1x-ZgS"/>
                         <segue destination="jYp-qN-eWJ" kind="show" identifier="showCategoryChannels" id="FNq-pt-Vqx"/>
                     </connections>
                 </viewController>
@@ -342,6 +347,6 @@
         <image name="television" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FNq-pt-Vqx"/>
+        <segue reference="U2O-h0-NLS"/>
     </inferredMetricsTieBreakers>
 </document>
