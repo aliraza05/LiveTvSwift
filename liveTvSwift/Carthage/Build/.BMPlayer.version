@@ -1,0 +1,9 @@
+{
+  "commitish" : "1.0.1",
+  "iOS" : [
+    {
+      "name" : "BMPlayer",
+      "hash" : "17d725284bf86c07a51d499e798a83329d09132c11ec3158b4e57f7a15fce7f1"
+    }
+  ]
+}

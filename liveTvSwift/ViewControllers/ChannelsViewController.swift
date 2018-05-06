@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import BMPlayer
+import NVActivityIndicatorView
+import AVFoundation
 
 class ChannelsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -16,26 +19,56 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
     let cellReuseIdentifier = "ChannelTableViewCell"
     var tableDataArray : [Channel] = []
     var event:Event?
-    
+    var player: BMPlayer!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
+        
         tableView_channel.register(UINib(nibName: "ChannelTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
 
         if ((event?.channels) != nil)
         {
             tableDataArray = (event?.channels)!
         }
+        
+        setupPlayerManager()
+        
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(applicationDidEnterBackground),
+                                               name: NSNotification.Name.UIApplicationDidEnterBackground,
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(applicationWillEnterForeground),
+                                               name: NSNotification.Name.UIApplicationWillEnterForeground,
+                                               object: nil)
+        
         // Do any additional setup after loading the view.
     }
 
+    @objc func applicationWillEnterForeground() {
+        
+    }
+    
+    @objc func applicationDidEnterBackground() {
+        player.pause(allowAutoPlay: false)
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    deinit {
+        // If use the slide to back, remember to call this method
+        // 使用手势返回的时候，调用下面方法手动销毁
+        player.prepareToDealloc()
+        print("VideoPlayViewController Deinit")
+    }
 
     // MARK: TableView Data Source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,5 +90,104 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        preparePlayer()
+        let channel: Channel = tableDataArray[indexPath.row]
+
+        setupPlayerResource(channel: channel)
+    }
+    
+    // MARK:- BMPlayer Functions
+    /**
+     prepare playerView
+     */
+    func preparePlayer() {
+        var controller: BMPlayerControlView? = nil
+        
+        //        controller = BMPlayerControlView()
+        controller = BMPlayerCustomControlView()
+        
+        player = BMPlayer(customControlView: controller)
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        appDelegate.window?.addSubview(player)
+        
+        //        view.addSubview(player)
+        
+        player.snp.makeConstraints { (make) in
+            make.top.equalToSuperview()
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+        
+        player.delegate = self
+        player.backBlock = { [unowned self] (isFullScreen) in
+            if isFullScreen {
+                return
+            } else {
+                self.player.removeFromSuperview()
+                
+                //                let _ = self.navigationController?.popViewController(animated: true)
+            }
+        }
+        
+        self.view.layoutIfNeeded()
+    }
+    func setupPlayerResource(channel: Channel) {
+     
+        let asset = BMPlayerResource(url: URL(string: channel.url)!,
+                                     name: channel.name)
+        player.setVideo(resource: asset)
+    }
+    
+    func setupPlayerManager() {
+        resetPlayerManager()
+        BMPlayerConf.shouldAutoPlay = true
+
+    }
+    func resetPlayerManager() {
+        BMPlayerConf.allowLog = false
+        BMPlayerConf.shouldAutoPlay = true
+        BMPlayerConf.tintColor = UIColor.white
+        BMPlayerConf.topBarShowInCase = .always
+        BMPlayerConf.loaderType  = NVActivityIndicatorType.ballRotateChase
+    }
+}
+// MARK:- BMPlayerDelegate example
+extension ChannelsViewController: BMPlayerDelegate {
+    // Call when player orinet changed
+    func bmPlayer(player: BMPlayer, playerOrientChanged isFullscreen: Bool) {
+        player.snp.remakeConstraints { (make) in
+            make.top.equalTo(view.snp.top)
+            make.left.equalTo(view.snp.left)
+            make.right.equalTo(view.snp.right)
+            if isFullscreen {
+                make.bottom.equalTo(view.snp.bottom)
+            } else {
+                make.height.equalTo(view.snp.width).multipliedBy(9.0/16.0).priority(500)
+            }
+        }
+    }
+    
+    // Call back when playing state changed, use to detect is playing or not
+    func bmPlayer(player: BMPlayer, playerIsPlaying playing: Bool) {
+        print("| BMPlayerDelegate | playerIsPlaying | playing - \(playing)")
+    }
+    
+    // Call back when playing state changed, use to detect specefic state like buffering, bufferfinished
+    func bmPlayer(player: BMPlayer, playerStateDidChange state: BMPlayerState) {
+        print("| BMPlayerDelegate | playerStateDidChange | state - \(state)")
+    }
+    
+    // Call back when play time change
+    func bmPlayer(player: BMPlayer, playTimeDidChange currentTime: TimeInterval, totalTime: TimeInterval) {
+        //        print("| BMPlayerDelegate | playTimeDidChange | \(currentTime) of \(totalTime)")
+    }
+    
+    // Call back when the video loaded duration changed
+    func bmPlayer(player: BMPlayer, loadedTimeDidChange loadedDuration: TimeInterval, totalDuration: TimeInterval) {
+        //        print("| BMPlayerDelegate | loadedTimeDidChange | \(loadedDuration) of \(totalDuration)")
     }
 }

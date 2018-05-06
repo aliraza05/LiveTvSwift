@@ -22,6 +22,11 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     {
         super.viewDidLoad()
         
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "d MMM, EEEE"
+        
+        dateTime_lbl.text = dateFormatterGet.string(from: Date())
+        
         tableViewEvent.register(UINib(nibName: "EventTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
 
         // Do any additional setup after loading the view, typically from a nib.
@@ -44,7 +49,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func fetchAppData()
     {
         self.view.makeToastActivity(.center)
-        APIManager.sharedInstance.fetchDataWithAppID(appID: 5, onSuccess: { json in
+        APIManager.sharedInstance.fetchDataWithAppID(appID: 6, onSuccess: { json in
             
             DispatchQueue.main.async
             {

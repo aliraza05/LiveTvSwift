@@ -31,6 +31,12 @@
 		FBBBDEE2209C409D00CAEAA8 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBBDEE1209C409D00CAEAA8 /* Parser.swift */; };
 		FBBBDEE4209C41CC00CAEAA8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBBDEE3209C41CC00CAEAA8 /* Constants.swift */; };
 		FBBBDEE7209C8E4F00CAEAA8 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBBDEE6209C8E4F00CAEAA8 /* Toast.swift */; };
+		FBDEFC19209EC547003E8C6B /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDEFC18209EC547003E8C6B /* MoreViewController.swift */; };
+		FBDEFC20209ED88D003E8C6B /* BMPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBDEFC1F209ED88D003E8C6B /* BMPlayer.framework */; };
+		FBDEFC23209ED942003E8C6B /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBDEFC21209ED942003E8C6B /* NVActivityIndicatorView.framework */; };
+		FBDEFC24209ED942003E8C6B /* NVActivityIndicatorViewAppExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBDEFC22209ED942003E8C6B /* NVActivityIndicatorViewAppExtension.framework */; };
+		FBDEFC26209EDE32003E8C6B /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBDEFC25209EDE32003E8C6B /* SnapKit.framework */; };
+		FBDEFC29209EE398003E8C6B /* BMPlayerCustomControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDEFC28209EE398003E8C6B /* BMPlayerCustomControlView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +87,12 @@
 		FBBBDEE1209C409D00CAEAA8 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		FBBBDEE3209C41CC00CAEAA8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FBBBDEE6209C8E4F00CAEAA8 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		FBDEFC18209EC547003E8C6B /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		FBDEFC1F209ED88D003E8C6B /* BMPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BMPlayer.framework; path = Carthage/Build/iOS/BMPlayer.framework; sourceTree = "<group>"; };
+		FBDEFC21209ED942003E8C6B /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorView.framework; path = Carthage/Build/iOS/NVActivityIndicatorView.framework; sourceTree = "<group>"; };
+		FBDEFC22209ED942003E8C6B /* NVActivityIndicatorViewAppExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorViewAppExtension.framework; path = Carthage/Build/iOS/NVActivityIndicatorViewAppExtension.framework; sourceTree = "<group>"; };
+		FBDEFC25209EDE32003E8C6B /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		FBDEFC28209EE398003E8C6B /* BMPlayerCustomControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMPlayerCustomControlView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +100,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBDEFC20209ED88D003E8C6B /* BMPlayer.framework in Frameworks */,
+				FBDEFC23209ED942003E8C6B /* NVActivityIndicatorView.framework in Frameworks */,
+				FBDEFC26209EDE32003E8C6B /* SnapKit.framework in Frameworks */,
+				FBDEFC24209ED942003E8C6B /* NVActivityIndicatorViewAppExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,11 +127,13 @@
 		FB38459120932CE900123B27 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				FBDEFC28209EE398003E8C6B /* BMPlayerCustomControlView.swift */,
 				FB38459220932CE900123B27 /* EventViewController.swift */,
 				FB38459320932CE900123B27 /* CategoriesViewController.swift */,
 				FB639900209C97FB0075BA19 /* ChannelsViewController.swift */,
 				FB914D45209B522D008F47EA /* SplashViewController.swift */,
 				FB914D46209B522D008F47EA /* SplashViewController.xib */,
+				FBDEFC18209EC547003E8C6B /* MoreViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -188,6 +206,7 @@
 				FBB5DD6020920A9900CE51FE /* liveTvSwiftTests */,
 				FBB5DD6B20920A9900CE51FE /* liveTvSwiftUITests */,
 				FBB5DD4820920A9900CE51FE /* Products */,
+				FBDEFC1E209ED88C003E8C6B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -240,6 +259,17 @@
 			path = Toast;
 			sourceTree = "<group>";
 		};
+		FBDEFC1E209ED88C003E8C6B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FBDEFC25209EDE32003E8C6B /* SnapKit.framework */,
+				FBDEFC21209ED942003E8C6B /* NVActivityIndicatorView.framework */,
+				FBDEFC22209ED942003E8C6B /* NVActivityIndicatorViewAppExtension.framework */,
+				FBDEFC1F209ED88D003E8C6B /* BMPlayer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -250,6 +280,7 @@
 				FBB5DD4320920A9900CE51FE /* Sources */,
 				FBB5DD4420920A9900CE51FE /* Frameworks */,
 				FBB5DD4520920A9900CE51FE /* Resources */,
+				FBDEFC27209EDFBF003E8C6B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -373,6 +404,30 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		FBDEFC27209EDFBF003E8C6B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/BMPlayer.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/NVActivityIndicatorView.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/NVActivityIndicatorViewAppExtension.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/BMPlayer.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NVActivityIndicatorView.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NVActivityIndicatorViewAppExtension.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FBB5DD4320920A9900CE51FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -381,8 +436,10 @@
 				FBBBDEE7209C8E4F00CAEAA8 /* Toast.swift in Sources */,
 				FB914D42209B33A6008F47EA /* Event.swift in Sources */,
 				FBBBDEE2209C409D00CAEAA8 /* Parser.swift in Sources */,
+				FBDEFC29209EE398003E8C6B /* BMPlayerCustomControlView.swift in Sources */,
 				FB914D3A209B2636008F47EA /* EventTableViewCell.swift in Sources */,
 				FB914D32209B1DAF008F47EA /* APIManager.swift in Sources */,
+				FBDEFC19209EC547003E8C6B /* MoreViewController.swift in Sources */,
 				FB38459520932CE900123B27 /* CategoriesViewController.swift in Sources */,
 				FBB5DD4B20920A9900CE51FE /* AppDelegate.swift in Sources */,
 				FB914D36209B1F48008F47EA /* SwiftyJSON.swift in Sources */,
@@ -559,6 +616,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = liveTvSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.broadpeak.liveTvSwift;
@@ -573,6 +634,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = liveTvSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.broadpeak.liveTvSwift;

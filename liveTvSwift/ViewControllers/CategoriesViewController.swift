@@ -60,7 +60,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     {
         
         //GetEventsFrom respnse is the parser function of Response class
-        tableDataArray = getEventsFromRespns(json: json)
+        tableDataArray = getCategoriesFromRespns(json: json)
         DispatchQueue.main.async
             {
                 self.categoryTableView.reloadData()
@@ -85,6 +85,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         tableView.deselectRow(at: indexPath, animated: true)
         let event: Event = tableDataArray[indexPath.row]
         performSegue(withIdentifier: "showCategoryChannels", sender: event)
@@ -92,8 +93,11 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-//        let something = segue.destination as! someViewController
-//        something.aVariable = anotherVariable
+        if (segue.identifier == "showCategoryChannels") {
+            // pass data to next view
+            let channelVC = segue.destination as! ChannelsViewController
+            channelVC.event = sender as? Event
+        }
     }
     
 }

@@ -1,0 +1,13 @@
+{
+  "commitish" : "4.2.0",
+  "iOS" : [
+    {
+      "name" : "NVActivityIndicatorViewAppExtension",
+      "hash" : "70efa522f5fc2be840787ec97af3397d106ee6c647e9c46a54f919cdd8cfcac8"
+    },
+    {
+      "name" : "NVActivityIndicatorView",
+      "hash" : "84fdceccf93bdc9973e12fd0f17981d6f9685e5c5c80bf1dff804690509c2c27"
+    }
+  ]
+}
