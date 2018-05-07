@@ -1,9 +1,18 @@
 {
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
   "commitish" : "1.0.1",
   "iOS" : [
     {
       "name" : "BMPlayer",
-      "hash" : "17d725284bf86c07a51d499e798a83329d09132c11ec3158b4e57f7a15fce7f1"
+      "hash" : "713241f0f7e02b082400ce4806fe872f76a89fc81013b58ebd3adb32c490bf10"
     }
   ]
 }

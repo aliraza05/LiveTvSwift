@@ -66,8 +66,11 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
     deinit {
         // If use the slide to back, remember to call this method
         // 使用手势返回的时候，调用下面方法手动销毁
-        player.prepareToDealloc()
-        print("VideoPlayViewController Deinit")
+        if (player) != nil
+        {
+            player.prepareToDealloc()
+            print("VideoPlayViewController Deinit")
+        }
     }
 
     // MARK: TableView Data Source

@@ -28,6 +28,9 @@ class CategoriesTableViewCell: UITableViewCell {
     func loadChannel(event: Event)
     {
         name_lbl.text = event.name
-        
+        if let url = URL(string: event.image_url)
+        {
+            categoryImageView.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "placeholderSmal"))
+        }
     }
 }

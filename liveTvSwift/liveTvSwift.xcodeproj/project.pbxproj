@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB2FE2D720A0301900582A40 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB2FE2D620A0301800582A40 /* Kingfisher.framework */; };
 		FB38459420932CE900123B27 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB38459220932CE900123B27 /* EventViewController.swift */; };
 		FB38459520932CE900123B27 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB38459320932CE900123B27 /* CategoriesViewController.swift */; };
 		FB639901209C97FB0075BA19 /* ChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB639900209C97FB0075BA19 /* ChannelsViewController.swift */; };
@@ -57,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FB2FE2D620A0301800582A40 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		FB38459220932CE900123B27 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		FB38459320932CE900123B27 /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		FB639900209C97FB0075BA19 /* ChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB2FE2D720A0301900582A40 /* Kingfisher.framework in Frameworks */,
 				FBDEFC20209ED88D003E8C6B /* BMPlayer.framework in Frameworks */,
 				FBDEFC23209ED942003E8C6B /* NVActivityIndicatorView.framework in Frameworks */,
 				FBDEFC26209EDE32003E8C6B /* SnapKit.framework in Frameworks */,
@@ -262,6 +265,7 @@
 		FBDEFC1E209ED88C003E8C6B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FB2FE2D620A0301800582A40 /* Kingfisher.framework */,
 				FBDEFC25209EDE32003E8C6B /* SnapKit.framework */,
 				FBDEFC21209ED942003E8C6B /* NVActivityIndicatorView.framework */,
 				FBDEFC22209ED942003E8C6B /* NVActivityIndicatorViewAppExtension.framework */,
@@ -415,6 +419,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/NVActivityIndicatorView.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/NVActivityIndicatorViewAppExtension.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/BMPlayer.framework",

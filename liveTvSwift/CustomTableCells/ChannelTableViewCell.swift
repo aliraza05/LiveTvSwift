@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ChannelTableViewCell: UITableViewCell {
 
@@ -29,6 +30,8 @@ class ChannelTableViewCell: UITableViewCell {
     func loadChannel(channel: Channel)
     {
         name_lbl.text = channel.name
+        let url = URL(string: channel.image_url)!
+        channel_img.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "placeholderSmal"))
         
     }
 }
