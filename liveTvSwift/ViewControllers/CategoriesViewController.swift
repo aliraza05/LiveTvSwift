@@ -43,8 +43,16 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
             {
                     self.view.hideToastActivity()
             }
+            let live = json["live"].boolValue
             
-            self.parseNetworkDataAndUpdateUI(json: json)
+            if live
+            {
+                self.parseNetworkDataAndUpdateUI(json: json)
+            }else
+            {
+                APP_DELEGATE().blockApplication()
+            }
+            
         }, onFailure: { error in
             let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))

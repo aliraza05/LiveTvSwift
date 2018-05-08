@@ -31,7 +31,7 @@
                             <constraint firstAttribute="height" constant="30" id="ykZ-vF-CQv"/>
                         </constraints>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="epJ-8V-DAB">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="epJ-8V-DAB">
                         <rect key="frame" x="15" y="64" width="290" height="178"/>
                     </imageView>
                 </subviews>
@@ -50,6 +50,7 @@
             <connections>
                 <outlet property="categoryImageView" destination="epJ-8V-DAB" id="OAI-w5-F5A"/>
                 <outlet property="name_lbl" destination="vXu-pb-CHW" id="CrV-9Z-tdJ"/>
+                <outlet property="thumbnail_imgV" destination="5TU-ci-njR" id="me0-W2-jt1"/>
             </connections>
             <point key="canvasLocation" x="41" y="121"/>
         </tableViewCell>

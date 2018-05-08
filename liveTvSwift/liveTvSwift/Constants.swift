@@ -9,6 +9,6 @@
 import Foundation
 import UIKit
 
-func appDelegate() -> AppDelegate {
+func APP_DELEGATE() -> AppDelegate {
     return UIApplication.shared.delegate as! AppDelegate
 }

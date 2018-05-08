@@ -17,6 +17,7 @@ class SplashViewController: UIViewController {
     var configuration: JSON = []
 
     var splashTime:Float = 5.0
+    var buttonDownloadLink : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +45,10 @@ class SplashViewController: UIViewController {
                 let showBtn:Bool = (config["value"] != nil)
                 download_btn.isHidden = !showBtn
             }
+            if key == "ButtonLink"
+            {
+                buttonDownloadLink = config["value"].stringValue
+            }
             if key == "Time"
             {
                 splashTime = config["value"].floatValue
@@ -61,16 +66,6 @@ class SplashViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     @IBAction func downloadAction(_ sender: Any)
     {
         hideSplash()
@@ -81,5 +76,4 @@ class SplashViewController: UIViewController {
         self.view.removeFromSuperview()
         self.removeFromParentViewController()
     }
-    
 }

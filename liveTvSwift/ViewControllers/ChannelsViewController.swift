@@ -24,11 +24,11 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
         
         tableView_channel.register(UINib(nibName: "ChannelTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
 
+        channelName_lbl.text = event?.name
+        
         if ((event?.channels) != nil)
         {
             tableDataArray = (event?.channels)!
@@ -112,9 +112,7 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
         
         player = BMPlayer(customControlView: controller)
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
-        appDelegate.window?.addSubview(player)
+        APP_DELEGATE().window?.addSubview(player)
         
         //        view.addSubview(player)
         

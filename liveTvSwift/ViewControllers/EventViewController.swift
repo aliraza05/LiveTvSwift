@@ -56,7 +56,16 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 self.view.hideToastActivity()
             }
 
-            self.parseNetworkDataAndUpdateUI(json: json)
+            let live = json["live"].boolValue
+            
+            if live
+            {
+                self.parseNetworkDataAndUpdateUI(json: json)
+            }else
+            {
+                APP_DELEGATE().blockApplication()
+            }
+            
         }, onFailure: { error in
             let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
@@ -84,8 +93,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     {
                         DispatchQueue.main.async
                         {
-                            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                            appDelegate.loadSplashScreenWithConfiguration(json: json)
+                            APP_DELEGATE().loadSplashScreenWithConfiguration(json: json)
                         }
                         isFirstTime = false
                     }

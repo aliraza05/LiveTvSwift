@@ -24,6 +24,10 @@ class EventTableViewCell: UITableViewCell {
         
         iconView.layer.cornerRadius = 20
         iconView.clipsToBounds = true
+        
+        iconImageView.layer.cornerRadius = 30
+        iconImageView.clipsToBounds = true
+        
         // Initialization code
     }
 
@@ -37,11 +41,11 @@ class EventTableViewCell: UITableViewCell {
     {
         name_lbl.text = event.name
         
-        if event.live {
-            status_lbl.isHidden = false
-        }else
+        status_lbl.text = event.status
+        
+        if let url = URL(string: event.image_url)
         {
-            status_lbl.isHidden = true
+            iconImageView.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "ball"))
         }
     }
     

@@ -53,5 +53,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         myVC.didMove(toParentViewController: window?.rootViewController)
     }
 
+    func blockApplication()
+    {
+        DispatchQueue.main.async
+        {
+            let myVC = AppBlockViewController(nibName: "AppBlockViewController", bundle: nil)
+            self.window?.rootViewController?.addChildViewController(myVC)
+            self.window?.rootViewController?.view.addSubview(myVC.view)
+            self.window?.rootViewController?.view.bringSubview(toFront: myVC.view)
+            self.window?.rootViewController?.view.clipsToBounds = false
+            myVC.didMove(toParentViewController: self.window?.rootViewController)
+        }
+        
+    }
 }
 

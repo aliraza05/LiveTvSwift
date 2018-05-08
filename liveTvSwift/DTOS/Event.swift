@@ -11,15 +11,17 @@ class Event {
     var live: Bool
     var status: String
     var image_url: String
+    var thumbnail_image: String
     var priority: Int
     var channels: [Channel]
     
-    init(name: String, live: Bool, status: String, image_url: String, priority: Int, channels: [ Channel])
+    init(name: String, live: Bool, status: String, image_url: String,thubnail : String, priority: Int, channels: [ Channel])
     {
         self.name = name
         self.live = live
         self.status = status
         self.image_url = image_url
+        self.thumbnail_image = thubnail
         self.priority = priority
         self.channels = channels
     }

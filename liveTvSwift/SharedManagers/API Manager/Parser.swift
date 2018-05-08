@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 func getEventsFromRespns(json: JSON) -> [Event]
 {
@@ -18,6 +19,7 @@ func getEventsFromRespns(json: JSON) -> [Event]
         let live = result["live"].boolValue
         let status = result["status"].stringValue
         let image_url = result["image_url"].stringValue
+        let thumbnail_image = result["thumbnail_image"].stringValue
         let priority = result["priority"].intValue
         
         var tempChannels : [Channel] = []
@@ -31,11 +33,22 @@ func getEventsFromRespns(json: JSON) -> [Event]
             let priority = channel["priority"].intValue
             let channel_type = channel["channel_type"].stringValue
             
-            tempChannels.append(Channel(name: name, live: live, url: url, image_url: image_url, priority: priority, channel_type: channel_type))
+            if live
+            {
+                tempChannels.append(Channel(name: name, live: live, url: url, image_url: image_url, priority: priority, channel_type: channel_type))
+            }
         }
         
-        eventsArray.append(Event(name: name, live: live, status: status, image_url: image_url, priority: priority, channels: tempChannels))
+        if live && tempChannels.count > 0
+        {
+            tempChannels.sort(by: { $0.priority < $1.priority })
+
+            eventsArray.append(Event(name: name, live: live, status: status, image_url: image_url,thubnail: thumbnail_image, priority: priority, channels: tempChannels))
+        }
     }
+    
+    eventsArray.sort(by: { $0.priority < $1.priority })
+
     return eventsArray;
 }
 func getCategoriesFromRespns(json: JSON) -> [Event]
@@ -48,6 +61,7 @@ func getCategoriesFromRespns(json: JSON) -> [Event]
         let live = result["live"].boolValue
         let status = result["status"].stringValue
         let image_url = result["image_url"].stringValue
+        let thumbnail_image = result["thumbnail_image"].stringValue
         let priority = result["priority"].intValue
         
         var tempChannels : [Channel] = []
@@ -61,10 +75,21 @@ func getCategoriesFromRespns(json: JSON) -> [Event]
             let priority = channel["priority"].intValue
             let channel_type = channel["channel_type"].stringValue
             
-            tempChannels.append(Channel(name: name, live: live, url: url, image_url: image_url, priority: priority, channel_type: channel_type))
+            if live
+            {
+                tempChannels.append(Channel(name: name, live: live, url: url, image_url: image_url, priority: priority, channel_type: channel_type))
+            }
         }
-        
-        eventsArray.append(Event(name: name, live: live, status: status, image_url: image_url, priority: priority, channels: tempChannels))
+        if live && tempChannels.count > 0
+        {
+            tempChannels.sort(by: { $0.priority < $1.priority })
+
+            eventsArray.append(Event(name: name, live: live, status: status, image_url: image_url,thubnail: thumbnail_image, priority: priority, channels: tempChannels))
+        }
     }
+    
+    eventsArray.sort(by: { $0.priority < $1.priority })
+    
     return eventsArray;
 }
+
