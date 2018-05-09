@@ -21,9 +21,11 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
     var event:Event?
     var player: BMPlayer!
     
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         tableView_channel.register(UINib(nibName: "ChannelTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
 
@@ -94,6 +96,8 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        APP_DELEGATE().myOrientation = .all
+
         preparePlayer()
         let channel: Channel = tableDataArray[indexPath.row]
 
@@ -126,8 +130,11 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
         player.delegate = self
         player.backBlock = { [unowned self] (isFullScreen) in
             if isFullScreen {
+                APP_DELEGATE().myOrientation = .portrait
+                self.player.removeFromSuperview()
                 return
             } else {
+                APP_DELEGATE().myOrientation = .portrait
                 self.player.removeFromSuperview()
                 
                 //                let _ = self.navigationController?.popViewController(animated: true)
@@ -160,16 +167,16 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
 extension ChannelsViewController: BMPlayerDelegate {
     // Call when player orinet changed
     func bmPlayer(player: BMPlayer, playerOrientChanged isFullscreen: Bool) {
-        player.snp.remakeConstraints { (make) in
-            make.top.equalTo(view.snp.top)
-            make.left.equalTo(view.snp.left)
-            make.right.equalTo(view.snp.right)
-            if isFullscreen {
-                make.bottom.equalTo(view.snp.bottom)
-            } else {
-                make.height.equalTo(view.snp.width).multipliedBy(9.0/16.0).priority(500)
-            }
-        }
+//        player.snp.remakeConstraints { (make) in
+//            make.top.equalTo(view.snp.top)
+//            make.left.equalTo(view.snp.left)
+//            make.right.equalTo(view.snp.right)
+//            if isFullscreen {
+//                make.bottom.equalTo(view.snp.bottom)
+//            } else {
+//                make.height.equalTo(view.snp.width).multipliedBy(9.0/16.0).priority(500)
+//            }
+//        }
     }
     
     // Call back when playing state changed, use to detect is playing or not
