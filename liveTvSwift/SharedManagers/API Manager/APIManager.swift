@@ -10,20 +10,12 @@ import UIKit
 
 class APIManager: NSObject {
     
-    let baseURL     = "https://live-sports-tv.herokuapp.com/api/applications/details"
-    let AUTH_TOKEN  = "6d0c0cdc967caa3731516a7b6b6ebd33c64c92ac"
-    
-    //For app id 5
-//    let AUTH_TOKEN  = "b50a576a7e6f77eb0c7b431f81f1b69771e7b409"
-
-    let APP_ID = 6
-    
     
     static let sharedInstance = APIManager()
     static let getPostsEndpoint = "/posts/"
     
-    func fetchDataWithAppID(appID: Int, onSuccess: @escaping(JSON) -> Void, onFailure: @escaping(Error) -> Void){
-    let url : String = baseURL
+    func fetchDataWithAppID(onSuccess: @escaping(JSON) -> Void, onFailure: @escaping(Error) -> Void){
+    let url : String = BASE_URL
     let request: NSMutableURLRequest = NSMutableURLRequest(url: NSURL(string: url)! as URL)
     request.httpMethod = "POST"
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")

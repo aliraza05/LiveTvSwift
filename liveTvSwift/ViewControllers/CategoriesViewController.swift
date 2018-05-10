@@ -37,7 +37,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     func fetchAppData()
     {
         self.view.makeToastActivity(.center)
-        APIManager.sharedInstance.fetchDataWithAppID(appID: 5, onSuccess: { json in
+        APIManager.sharedInstance.fetchDataWithAppID(onSuccess: { json in
             
             DispatchQueue.main.async
             {

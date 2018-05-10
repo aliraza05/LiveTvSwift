@@ -49,7 +49,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func fetchAppData()
     {
         self.view.makeToastActivity(.center)
-        APIManager.sharedInstance.fetchDataWithAppID(appID: 6, onSuccess: { json in
+        APIManager.sharedInstance.fetchDataWithAppID(onSuccess: { json in
             
             DispatchQueue.main.async
             {
