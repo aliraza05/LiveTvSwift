@@ -10,9 +10,15 @@ import UIKit
 
 class AppBlockViewController: UIViewController {
 
+    @IBOutlet weak var description_lbl: UILabel!
+    
+    var message : String = ""
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        description_lbl.text = message
         // Do any additional setup after loading the view.
     }
 

@@ -50,7 +50,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
                 self.parseNetworkDataAndUpdateUI(json: json)
             }else
             {
-                APP_DELEGATE().blockApplication()
+                APP_DELEGATE().blockApplication(message: "Server communication error we will get back to you soon")
             }
             
         }, onFailure: { error in

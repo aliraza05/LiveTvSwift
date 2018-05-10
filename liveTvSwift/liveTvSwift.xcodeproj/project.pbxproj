@@ -25,6 +25,7 @@
 		FB914D44209B3696008F47EA /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB914D43209B3696008F47EA /* Channel.swift */; };
 		FB914D47209B522D008F47EA /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB914D45209B522D008F47EA /* SplashViewController.swift */; };
 		FB914D48209B522D008F47EA /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB914D46209B522D008F47EA /* SplashViewController.xib */; };
+		FBAD25EC20A41E7E002351C5 /* AddBlockerDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = FBAD25EB20A41E7E002351C5 /* AddBlockerDetector.m */; };
 		FBB5DD4B20920A9900CE51FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB5DD4A20920A9900CE51FE /* AppDelegate.swift */; };
 		FBB5DD5220920A9900CE51FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBB5DD5020920A9900CE51FE /* Main.storyboard */; };
 		FBB5DD5420920A9900CE51FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBB5DD5320920A9900CE51FE /* Assets.xcassets */; };
@@ -78,6 +79,9 @@
 		FB914D43209B3696008F47EA /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		FB914D45209B522D008F47EA /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		FB914D46209B522D008F47EA /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
+		FBAD25E720A41E4D002351C5 /* liveTvSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "liveTvSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		FBAD25EA20A41E7E002351C5 /* AddBlockerDetector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddBlockerDetector.h; sourceTree = "<group>"; };
+		FBAD25EB20A41E7E002351C5 /* AddBlockerDetector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddBlockerDetector.m; sourceTree = "<group>"; };
 		FBB5DD4720920A9900CE51FE /* liveTvSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = liveTvSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB5DD4A20920A9900CE51FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBB5DD5120920A9900CE51FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -167,6 +171,7 @@
 		FB914D33209B1F48008F47EA /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				FBAD25E620A41E20002351C5 /* AddBlockerDetector */,
 				FBBBDEE5209C8E4F00CAEAA8 /* Toast */,
 				FB914D34209B1F48008F47EA /* SwiftyJSON */,
 			);
@@ -201,6 +206,16 @@
 				FB914D43209B3696008F47EA /* Channel.swift */,
 			);
 			path = DTOS;
+			sourceTree = "<group>";
+		};
+		FBAD25E620A41E20002351C5 /* AddBlockerDetector */ = {
+			isa = PBXGroup;
+			children = (
+				FBAD25E720A41E4D002351C5 /* liveTvSwift-Bridging-Header.h */,
+				FBAD25EA20A41E7E002351C5 /* AddBlockerDetector.h */,
+				FBAD25EB20A41E7E002351C5 /* AddBlockerDetector.m */,
+			);
+			path = AddBlockerDetector;
 			sourceTree = "<group>";
 		};
 		FBB5DD3E20920A9900CE51FE = {
@@ -349,6 +364,7 @@
 				TargetAttributes = {
 					FBB5DD4620920A9900CE51FE = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					FBB5DD5C20920A9900CE51FE = {
@@ -451,6 +467,7 @@
 				FBDEFC29209EE398003E8C6B /* BMPlayerCustomControlView.swift in Sources */,
 				FB914D3A209B2636008F47EA /* EventTableViewCell.swift in Sources */,
 				FB914D32209B1DAF008F47EA /* APIManager.swift in Sources */,
+				FBAD25EC20A41E7E002351C5 /* AddBlockerDetector.m in Sources */,
 				FBDEFC19209EC547003E8C6B /* MoreViewController.swift in Sources */,
 				FB38459520932CE900123B27 /* CategoriesViewController.swift in Sources */,
 				FBB5DD4B20920A9900CE51FE /* AppDelegate.swift in Sources */,
@@ -628,6 +645,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -638,6 +656,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.broadpeak.liveTvSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ThirdParty/AddBlockerDetector/liveTvSwift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -647,6 +667,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -657,6 +678,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.broadpeak.liveTvSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ThirdParty/AddBlockerDetector/liveTvSwift-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+let ADD_BLOCKER_CHECKING_TIME = 4.0
+
 func APP_DELEGATE() -> AppDelegate {
     return UIApplication.shared.delegate as! AppDelegate
 }

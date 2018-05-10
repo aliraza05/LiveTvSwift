@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AppBlockViewController" customModule="liveTvSwift" customModuleProvider="target">
             <connections>
+                <outlet property="description_lbl" destination="Ywb-5I-9d4" id="7g9-Vi-AHX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

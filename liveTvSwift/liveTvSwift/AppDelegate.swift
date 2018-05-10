@@ -20,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        _ = Timer.scheduledTimer(timeInterval: ADD_BLOCKER_CHECKING_TIME, target: self, selector: #selector(self.checkForAddBlocker), userInfo: nil, repeats: true)
+
         // Override point for customization after application launch.
         return true
     }
@@ -45,12 +48,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
     // Mark: Helper Methods
+    
+    @objc func checkForAddBlocker() {
+        // Something cool
+        let isAddsBlocking = AddBlockerDetector.isAddBlockerRunning()
+
+        if isAddsBlocking
+        {
+            self.blockApplication(message: "You are running add blocker please stop it in order to use our app.")
+        }
+        
+    }
+    
     func loadSplashScreenWithConfiguration(json: JSON)
     {
         let myVC = SplashViewController(nibName: "SplashViewController", bundle: nil)
         myVC.configuration = json
+        myVC.view.frame = (APP_DELEGATE().window?.frame)!;
+
         window?.rootViewController?.addChildViewController(myVC)
         window?.rootViewController?.view.addSubview(myVC.view)
         window?.rootViewController?.view.bringSubview(toFront: myVC.view)
@@ -58,11 +75,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         myVC.didMove(toParentViewController: window?.rootViewController)
     }
 
-    func blockApplication()
+    func blockApplication(message: String)
     {
         DispatchQueue.main.async
         {
             let myVC = AppBlockViewController(nibName: "AppBlockViewController", bundle: nil)
+            myVC.message = message
+            myVC.view.frame = (APP_DELEGATE().window?.frame)!;
             self.window?.rootViewController?.addChildViewController(myVC)
             self.window?.rootViewController?.view.addSubview(myVC.view)
             self.window?.rootViewController?.view.bringSubview(toFront: myVC.view)
