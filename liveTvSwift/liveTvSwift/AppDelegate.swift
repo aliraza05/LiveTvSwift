@@ -57,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         if isAddsBlocking
         {
-            self.blockApplication(message: "You are running add blocker please stop it in order to use our app.")
+            self.blockApplication(message: ADD_BLOCKER_RUNNING_MSG)
         }
         
     }

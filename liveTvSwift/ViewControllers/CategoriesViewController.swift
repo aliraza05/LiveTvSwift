@@ -50,7 +50,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
                 self.parseNetworkDataAndUpdateUI(json: json)
             }else
             {
-                APP_DELEGATE().blockApplication(message: "Server communication error we will get back to you soon")
+                APP_DELEGATE().blockApplication(message: APP_DISABLED_MESSAGE)
             }
             
         }, onFailure: { error in
@@ -70,7 +70,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         //GetEventsFrom respnse is the parser function of Response class
         tableDataArray = getCategoriesFromRespns(json: json)
         DispatchQueue.main.async
-            {
+        {
                 self.categoryTableView.reloadData()
         }
     }
