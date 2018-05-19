@@ -14,7 +14,7 @@ let BASE_URL                    = "https://live-sports-tv.herokuapp.com/api/appl
 let AUTH_TOKEN                  = "6d0c0cdc967caa3731516a7b6b6ebd33c64c92ac"
 
 
-let ADD_BLOCKER_CHECKING_TIME   = 4.0
+let ADD_BLOCKER_CHECKING_TIME   = 30.0
 let APP_DISABLED_MESSAGE        = "Server communication error we will get back to you soon"
 let ADD_BLOCKER_RUNNING_MSG     = "You are running add blocker please stop it in order to use our app."
 

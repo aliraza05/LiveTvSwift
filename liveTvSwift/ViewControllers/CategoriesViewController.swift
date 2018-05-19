@@ -11,6 +11,7 @@ import UIKit
 class CategoriesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
 
     @IBOutlet weak var categoryTableView: UITableView!
+    private let refreshControl = UIRefreshControl()
 
     let cellReuseIdentifier = "CategoriesTableViewCell"
     var tableDataArray : [Event] = []
@@ -18,6 +19,16 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchAppData()
+
+        // Add Refresh Control to Table View
+        if #available(iOS 10.0, *) {
+            categoryTableView.refreshControl = refreshControl
+        } else {
+            categoryTableView.addSubview(refreshControl)
+        }
+        refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
+        refreshControl.tintColor = UIColor(displayP3Red: 0.0196, green: 0.6039, blue: 0.8196, alpha: 1.0)
         
         categoryTableView.register(UINib(nibName: "CategoriesTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
 
@@ -31,13 +42,17 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
             AdsManager.sharedInstance.showInterstatial(self, location:"start")
             canShowAd = false
         }
-        fetchAppData()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    @objc private func refreshData(_ sender: Any) {
+        
+        fetchAppData()
+    }
+    
     // MARK: Netwrok Calling
     func fetchAppData()
     {
@@ -46,7 +61,9 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
             
             DispatchQueue.main.async
             {
-                    self.view.hideToastActivity()
+                self.view.hideToastActivity()
+                self.refreshControl.endRefreshing()
+
             }
             let live = json["live"].boolValue
             
@@ -64,7 +81,9 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
             self.show(alert, sender: nil)
             DispatchQueue.main.async
             {
-                    self.view.hideToastActivity()
+                self.view.hideToastActivity()
+                self.refreshControl.endRefreshing()
+
             }
         })
     }

@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        checkForAddBlocker()
         _ = Timer.scheduledTimer(timeInterval: ADD_BLOCKER_CHECKING_TIME, target: self, selector: #selector(self.checkForAddBlocker), userInfo: nil, repeats: true)
         GADMobileAds.configure(withApplicationID: "ca-app-pub-2498422838695550~2955082663")
         // Override point for customization after application launch.

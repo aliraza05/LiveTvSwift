@@ -37,12 +37,12 @@
 		FBBBDEE2209C409D00CAEAA8 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBBDEE1209C409D00CAEAA8 /* Parser.swift */; };
 		FBBBDEE4209C41CC00CAEAA8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBBDEE3209C41CC00CAEAA8 /* Constants.swift */; };
 		FBBBDEE7209C8E4F00CAEAA8 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBBDEE6209C8E4F00CAEAA8 /* Toast.swift */; };
+		FBC9491320B0B28100925486 /* BMPlayerCustomControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC9491220B0B28000925486 /* BMPlayerCustomControlView.swift */; };
 		FBDEFC19209EC547003E8C6B /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDEFC18209EC547003E8C6B /* MoreViewController.swift */; };
 		FBDEFC20209ED88D003E8C6B /* BMPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBDEFC1F209ED88D003E8C6B /* BMPlayer.framework */; };
 		FBDEFC23209ED942003E8C6B /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBDEFC21209ED942003E8C6B /* NVActivityIndicatorView.framework */; };
 		FBDEFC24209ED942003E8C6B /* NVActivityIndicatorViewAppExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBDEFC22209ED942003E8C6B /* NVActivityIndicatorViewAppExtension.framework */; };
 		FBDEFC26209EDE32003E8C6B /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBDEFC25209EDE32003E8C6B /* SnapKit.framework */; };
-		FBDEFC29209EE398003E8C6B /* BMPlayerCustomControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDEFC28209EE398003E8C6B /* BMPlayerCustomControlView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,12 +103,12 @@
 		FBBBDEE1209C409D00CAEAA8 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		FBBBDEE3209C41CC00CAEAA8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FBBBDEE6209C8E4F00CAEAA8 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		FBC9491220B0B28000925486 /* BMPlayerCustomControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMPlayerCustomControlView.swift; sourceTree = "<group>"; };
 		FBDEFC18209EC547003E8C6B /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		FBDEFC1F209ED88D003E8C6B /* BMPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BMPlayer.framework; path = Carthage/Build/iOS/BMPlayer.framework; sourceTree = "<group>"; };
 		FBDEFC21209ED942003E8C6B /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorView.framework; path = Carthage/Build/iOS/NVActivityIndicatorView.framework; sourceTree = "<group>"; };
 		FBDEFC22209ED942003E8C6B /* NVActivityIndicatorViewAppExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorViewAppExtension.framework; path = Carthage/Build/iOS/NVActivityIndicatorViewAppExtension.framework; sourceTree = "<group>"; };
 		FBDEFC25209EDE32003E8C6B /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
-		FBDEFC28209EE398003E8C6B /* BMPlayerCustomControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMPlayerCustomControlView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +153,7 @@
 		FB38459120932CE900123B27 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				FBDEFC28209EE398003E8C6B /* BMPlayerCustomControlView.swift */,
+				FBC9491220B0B28000925486 /* BMPlayerCustomControlView.swift */,
 				FB38459220932CE900123B27 /* EventViewController.swift */,
 				FB38459320932CE900123B27 /* CategoriesViewController.swift */,
 				FB639900209C97FB0075BA19 /* ChannelsViewController.swift */,
@@ -511,7 +511,6 @@
 				FB914D42209B33A6008F47EA /* Event.swift in Sources */,
 				FB6866A920AC6D6C00D330D4 /* AdsManager.swift in Sources */,
 				FBBBDEE2209C409D00CAEAA8 /* Parser.swift in Sources */,
-				FBDEFC29209EE398003E8C6B /* BMPlayerCustomControlView.swift in Sources */,
 				FB914D3A209B2636008F47EA /* EventTableViewCell.swift in Sources */,
 				FB914D32209B1DAF008F47EA /* APIManager.swift in Sources */,
 				FBAD25EC20A41E7E002351C5 /* AddBlockerDetector.m in Sources */,
@@ -523,6 +522,7 @@
 				FB639901209C97FB0075BA19 /* ChannelsViewController.swift in Sources */,
 				FB914D3E209B2BB7008F47EA /* CategoriesTableViewCell.swift in Sources */,
 				FB914D44209B3696008F47EA /* Channel.swift in Sources */,
+				FBC9491320B0B28100925486 /* BMPlayerCustomControlView.swift in Sources */,
 				FB38459420932CE900123B27 /* EventViewController.swift in Sources */,
 				FB914D47209B522D008F47EA /* SplashViewController.swift in Sources */,
 				FBBBDEE4209C41CC00CAEAA8 /* Constants.swift in Sources */,

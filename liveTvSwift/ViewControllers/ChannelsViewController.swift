@@ -26,7 +26,6 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         tableView_channel.register(UINib(nibName: "ChannelTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
 
         channelName_lbl.text = event?.name
@@ -53,7 +52,7 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     @objc func applicationWillEnterForeground() {
-        
+        player.play()
     }
     
     @objc func applicationDidEnterBackground() {
@@ -118,6 +117,8 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
         
         APP_DELEGATE().window?.rootViewController?.view.addSubview(player)
         
+        UIApplication.shared.keyWindow?.windowLevel = UIWindowLevelStatusBar
+
         //        view.addSubview(player)
         
         player.snp.makeConstraints { (make) in
@@ -129,18 +130,14 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
         
         player.delegate = self
         player.backBlock = { [unowned self] (isFullScreen) in
-            if isFullScreen {
-                APP_DELEGATE().myOrientation = .portrait
-                self.player.removeFromSuperview()
-                return
-            } else {
-                APP_DELEGATE().myOrientation = .portrait
-                self.player.removeFromSuperview()
-                
-                //                let _ = self.navigationController?.popViewController(animated: true)
-            }
+            
+            UIApplication.shared.keyWindow?.windowLevel = UIWindowLevelNormal
+            APP_DELEGATE().myOrientation = .portrait
+            self.player.removeFromSuperview()
+            
             AdsManager.sharedInstance.showInterstatial(nil, location: "aftervideo")
         }
+        
         
         self.view.layoutIfNeeded()
     }

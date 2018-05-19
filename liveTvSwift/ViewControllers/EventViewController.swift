@@ -13,7 +13,8 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     @IBOutlet weak var tableViewEvent: UITableView!
     @IBOutlet weak var dateTime_lbl: UILabel!
-    
+    private let refreshControl = UIRefreshControl()
+
     @IBOutlet weak var tableViewEventHeightConstraint: NSLayoutConstraint!
     var tableDataArray : [Event] = []
     var isFirstTime : Bool = true
@@ -23,11 +24,21 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+        fetchAppData()
+
         let dateFormatterGet = DateFormatter()
         dateFormatterGet.dateFormat = "d MMM, EEEE"
         
         dateTime_lbl.text = dateFormatterGet.string(from: Date())
+        
+        // Add Refresh Control to Table View
+        if #available(iOS 10.0, *) {
+            tableViewEvent.refreshControl = refreshControl
+        } else {
+            tableViewEvent.addSubview(refreshControl)
+        }
+        refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
+        refreshControl.tintColor = UIColor(displayP3Red: 0.0196, green: 0.6039, blue: 0.8196, alpha: 1.0)
         
         tableViewEvent.register(UINib(nibName: "EventTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
 
@@ -35,8 +46,6 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        fetchAppData()
     }
     
     override func didReceiveMemoryWarning()
@@ -44,6 +53,11 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.didReceiveMemoryWarning()
         
         // Dispose of any resources that can be recreated.
+    }
+    
+    @objc private func refreshData(_ sender: Any) {
+        
+        fetchAppData()
     }
     
     // MARK: Netwrok Calling
@@ -55,6 +69,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
             DispatchQueue.main.async
             {
                 self.view.hideToastActivity()
+                self.refreshControl.endRefreshing()
             }
 
             let live = json["live"].boolValue
@@ -74,6 +89,8 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
             DispatchQueue.main.async
             {
                 self.view.hideToastActivity()
+                self.refreshControl.endRefreshing()
+
             }
             
         })
