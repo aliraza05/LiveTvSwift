@@ -18,7 +18,15 @@ let ADD_BLOCKER_CHECKING_TIME   = 4.0
 let APP_DISABLED_MESSAGE        = "Server communication error we will get back to you soon"
 let ADD_BLOCKER_RUNNING_MSG     = "You are running add blocker please stop it in order to use our app."
 
+let ADMOB_APP_ID                = "ca-app-pub-2498422838695550/7845405823"
+let ADMOB_BANNER_ID             = "ca-app-pub-3940256099942544/2934735716"
+let ADMOB_INTERSTITIAL_ID       = "ca-app-pub-3940256099942544/4411468910"
 
+let CHARTBOOST_ID               = "SOMETHING"
+let CHARTBOOST_SIG              = "SOMETHING"
+
+
+let STARTAPP_ID                 = "207757391"
 //For app id 5
 //    let AUTH_TOKEN  = "b50a576a7e6f77eb0c7b431f81f1b69771e7b409"
 

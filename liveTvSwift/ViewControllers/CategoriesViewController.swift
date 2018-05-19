@@ -25,7 +25,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+//        AdsManager.sharedInstance.showInterstatial(self, location:"start")
         fetchAppData()
     }
     override func didReceiveMemoryWarning() {

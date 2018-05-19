@@ -8,11 +8,13 @@
 
 import UIKit
 
+
 class EventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableViewEvent: UITableView!
     @IBOutlet weak var dateTime_lbl: UILabel!
     
+    @IBOutlet weak var tableViewEventHeightConstraint: NSLayoutConstraint!
     var tableDataArray : [Event] = []
     var isFirstTime : Bool = true
     
@@ -31,19 +33,18 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
         // Do any additional setup after loading the view, typically from a nib.
     }
-
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         fetchAppData()
     }
+    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
         
         // Dispose of any resources that can be recreated.
     }
-    
     
     // MARK: Netwrok Calling
     func fetchAppData()
@@ -100,6 +101,10 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 }
             }
         }
+        AdsManager.sharedInstance.adsData  = getAdsFromRespns(json: json)
+        AdsManager.sharedInstance.showBanner(self.view)
+//        AdsManager.sharedInstance.showInterstatial(self, location:"start")
+        
         //GetEventsFrom respnse is the parser function of Response class
         tableDataArray = getEventsFromRespns(json: json)
         DispatchQueue.main.async

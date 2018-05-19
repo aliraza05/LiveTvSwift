@@ -93,3 +93,45 @@ func getCategoriesFromRespns(json: JSON) -> [Event]
     return eventsArray;
 }
 
+func getAdsFromRespns(json: JSON) -> NSMutableArray
+{
+    let adsArray: NSMutableArray = NSMutableArray()
+    
+    for result in json["app_ads"].arrayValue
+    {
+        var canAddAgain:Bool = true
+        let provider = result["ad_provider"].stringValue
+        let enable = result["enable"].boolValue
+        
+        if enable
+        {
+            var location:[String] = []
+            for loc in result["ad_locations"].arrayValue
+            {
+                location.append(loc["title"].stringValue)
+            }
+            
+            //checking if provider exist already and adding locations in existing provider ads object
+            for allItem in adsArray
+            {
+                let cAds:Ads = allItem as! Ads
+                if cAds.provider == provider
+                {
+                    canAddAgain = false
+                    for l2 in location
+                    {
+                        cAds.locations.append(l2)
+                    }
+                }
+            }
+//            if provider does not exist 
+            if canAddAgain
+            {
+                adsArray.add(Ads(provider:provider,locations:location))
+            }
+        }
+        
+    }
+    return adsArray
+}
+

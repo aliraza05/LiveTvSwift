@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="180" estimatedRowHeight="180" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rTc-OD-NMA">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="Tnz-ML-qwF">
@@ -47,7 +47,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="rTc-OD-NMA" firstAttribute="bottom" secondItem="PQr-Ze-W5v" secondAttribute="bottom" id="6mH-Vu-gKH"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="rTc-OD-NMA" secondAttribute="bottom" constant="50" id="JGa-mU-Tfj"/>
                             <constraint firstItem="rTc-OD-NMA" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="RHy-cu-guv"/>
                             <constraint firstItem="rTc-OD-NMA" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="amd-vC-chp"/>
                             <constraint firstItem="rTc-OD-NMA" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="pe3-AI-mNg"/>
@@ -58,6 +58,7 @@
                     <connections>
                         <outlet property="dateTime_lbl" destination="fdl-6v-UfD" id="Ozm-Nn-gqG"/>
                         <outlet property="tableViewEvent" destination="rTc-OD-NMA" id="i4G-R7-vkv"/>
+                        <outlet property="tableViewEventHeightConstraint" destination="JGa-mU-Tfj" id="vA2-xf-qhO"/>
                         <segue destination="jYp-qN-eWJ" kind="show" identifier="showCategoryChannels" id="U2O-h0-NLS"/>
                     </connections>
                 </viewController>
