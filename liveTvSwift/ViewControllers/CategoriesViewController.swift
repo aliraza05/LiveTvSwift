@@ -14,7 +14,8 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
 
     let cellReuseIdentifier = "CategoriesTableViewCell"
     var tableDataArray : [Event] = []
-
+    var canShowAd:Bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,7 +26,11 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        AdsManager.sharedInstance.showInterstatial(self, location:"start")
+        if canShowAd
+        {
+            AdsManager.sharedInstance.showInterstatial(self, location:"start")
+            canShowAd = false
+        }
         fetchAppData()
     }
     override func didReceiveMemoryWarning() {
@@ -93,7 +98,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        canShowAd = true
         tableView.deselectRow(at: indexPath, animated: true)
         let event: Event = tableDataArray[indexPath.row]
         performSegue(withIdentifier: "showCategoryChannels", sender: event)

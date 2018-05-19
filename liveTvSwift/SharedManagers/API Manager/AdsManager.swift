@@ -28,7 +28,7 @@ class AdsManager:NSObject,GADBannerViewDelegate,GADInterstitialDelegate
         bannerView.delegate = self
         adsData = NSMutableArray()
         
-        interstitial = GADInterstitial(adUnitID: ADMOB_INTERSTITIAL_ID)
+//        interstitial = GADInterstitial(adUnitID: ADMOB_INTERSTITIAL_ID)
 
         showAdmobInterstitial(window.rootViewController!)
     }
@@ -36,7 +36,7 @@ class AdsManager:NSObject,GADBannerViewDelegate,GADInterstitialDelegate
     
     //full screen ads
     
-    func showInterstatial(_ vc:UIViewController, location:String)
+    func showInterstatial(_ vc:UIViewController?, location:String)
     {
       for adsObj in adsData
       {
@@ -64,13 +64,13 @@ class AdsManager:NSObject,GADBannerViewDelegate,GADInterstitialDelegate
     }
     
     //admob interstatial
-    func showAdmobInterstitial(_ vc:UIViewController)
+    func showAdmobInterstitial(_ vc:UIViewController?)
     {
         print("interstitial:ready to present")
-        if self.interstitial.isReady
-        {
-            interstitial.present(fromRootViewController: vc)
-        }
+//        if self.interstitial.isReady
+//        {
+//            interstitial.present(fromRootViewController: vc)
+//        }
         interstitial = GADInterstitial(adUnitID: ADMOB_INTERSTITIAL_ID)
         interstitial.delegate = self
         let request = GADRequest()
@@ -80,6 +80,7 @@ class AdsManager:NSObject,GADBannerViewDelegate,GADInterstitialDelegate
     /// Tells the delegate an ad request succeeded.
     func interstitialDidReceiveAd(_ ad: GADInterstitial) {
         print("interstitial:DidReceiveAd")
+        interstitial.present(fromRootViewController: self.window.rootViewController!)
     }
     
     /// Tells the delegate an ad request failed.

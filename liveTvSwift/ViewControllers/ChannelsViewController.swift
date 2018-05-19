@@ -116,7 +116,7 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
         
         player = BMPlayer(customControlView: controller)
         
-        APP_DELEGATE().window?.addSubview(player)
+        APP_DELEGATE().window?.rootViewController?.view.addSubview(player)
         
         //        view.addSubview(player)
         
@@ -139,6 +139,7 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
                 
                 //                let _ = self.navigationController?.popViewController(animated: true)
             }
+            AdsManager.sharedInstance.showInterstatial(nil, location: "aftervideo")
         }
         
         self.view.layoutIfNeeded()
@@ -148,6 +149,7 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
         let asset = BMPlayerResource(url: URL(string: channel.url)!,
                                      name: channel.name)
         player.setVideo(resource: asset)
+        AdsManager.sharedInstance.showInterstatial(nil, location: "beforevideo")
     }
     
     func setupPlayerManager() {

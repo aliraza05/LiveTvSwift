@@ -102,7 +102,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
         AdsManager.sharedInstance.adsData  = getAdsFromRespns(json: json)
-        AdsManager.sharedInstance.showBanner(self.view)
+//        AdsManager.sharedInstance.showBanner(self.view)
 //        AdsManager.sharedInstance.showInterstatial(self, location:"start")
         
         //GetEventsFrom respnse is the parser function of Response class
