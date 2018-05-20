@@ -30,6 +30,9 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=regular">
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                            </variation>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -87,11 +90,15 @@
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=regular">
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                            </variation>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="jGg-Rc-6OW" firstAttribute="leading" secondItem="YzJ-ck-vPz" secondAttribute="leading" constant="19" id="RK6-Pm-Rb8"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jGg-Rc-6OW" secondAttribute="trailing" constant="15" id="WeE-Bl-Kbh"/>
                                         <constraint firstItem="jGg-Rc-6OW" firstAttribute="top" secondItem="YzJ-ck-vPz" secondAttribute="top" constant="10" id="c6X-kW-yj7"/>
                                     </constraints>
                                 </view>
@@ -170,12 +177,17 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRG-hg-oEf">
                                         <rect key="frame" x="19" y="30" width="42" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="42" id="0Wd-xI-8I2"/>
+                                            <constraint firstAttribute="width" constant="42" id="0Wd-xI-8I2">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="80"/>
+                                            </constraint>
                                             <constraint firstAttribute="height" constant="21" id="rUB-Ei-2Kh"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                        </variation>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4a-0G-nRv">
                                         <rect key="frame" x="19" y="57" width="200" height="24"/>
@@ -187,6 +199,9 @@
                                         <state key="normal" title="Mail" image="mail">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        </variation>
                                         <connections>
                                             <action selector="mailAction:" destination="hsN-Yi-s0V" eventType="touchUpInside" id="EMN-Wt-hba"/>
                                         </connections>
@@ -201,6 +216,9 @@
                                         <state key="normal" title="Terms" image="file_blue">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        </variation>
                                         <connections>
                                             <action selector="termsAction:" destination="hsN-Yi-s0V" eventType="touchUpInside" id="2gv-qI-bOL"/>
                                         </connections>
@@ -215,6 +233,9 @@
                                         <state key="normal" title="Rate Us" image="rate">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        </variation>
                                         <connections>
                                             <action selector="rateusAction:" destination="hsN-Yi-s0V" eventType="touchUpInside" id="hnT-KI-KPE"/>
                                         </connections>
@@ -229,6 +250,9 @@
                                         <state key="normal" title="Version" image="icon">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        </variation>
                                         <connections>
                                             <action selector="versionAction:" destination="hsN-Yi-s0V" eventType="touchUpInside" id="e0Q-YU-gCJ"/>
                                         </connections>
@@ -242,6 +266,9 @@
                                         <state key="normal" title="Support us by watching an add" image="heart">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        </variation>
                                         <connections>
                                             <action selector="supportAction:" destination="hsN-Yi-s0V" eventType="touchUpInside" id="CY6-S8-alJ"/>
                                         </connections>
@@ -249,16 +276,24 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="W4a-0G-nRv" firstAttribute="top" secondItem="cRG-hg-oEf" secondAttribute="bottom" constant="6" id="D1A-7N-Ehj"/>
+                                    <constraint firstItem="W4a-0G-nRv" firstAttribute="top" secondItem="cRG-hg-oEf" secondAttribute="bottom" constant="6" id="D1A-7N-Ehj">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="16"/>
+                                    </constraint>
                                     <constraint firstItem="RvR-Jn-UJS" firstAttribute="leading" secondItem="HaJ-0Z-Blc" secondAttribute="leading" constant="19" id="SuF-lE-mtQ"/>
-                                    <constraint firstItem="JU4-0a-wfv" firstAttribute="top" secondItem="RvR-Jn-UJS" secondAttribute="bottom" constant="8" id="Sxg-bO-pyc"/>
+                                    <constraint firstItem="JU4-0a-wfv" firstAttribute="top" secondItem="RvR-Jn-UJS" secondAttribute="bottom" constant="8" id="Sxg-bO-pyc">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="18"/>
+                                    </constraint>
                                     <constraint firstItem="cRG-hg-oEf" firstAttribute="top" secondItem="HaJ-0Z-Blc" secondAttribute="top" constant="30" id="Twl-Bx-T3d"/>
                                     <constraint firstItem="AiE-u2-YOE" firstAttribute="leading" secondItem="HaJ-0Z-Blc" secondAttribute="leading" constant="19" id="VKu-1y-17C"/>
                                     <constraint firstItem="W4a-0G-nRv" firstAttribute="leading" secondItem="HaJ-0Z-Blc" secondAttribute="leading" constant="19" id="aVl-lT-mkZ"/>
                                     <constraint firstAttribute="bottom" secondItem="qap-JR-9yT" secondAttribute="bottom" constant="48" id="dwW-aa-JE8"/>
-                                    <constraint firstItem="RvR-Jn-UJS" firstAttribute="top" secondItem="W4a-0G-nRv" secondAttribute="bottom" constant="8" id="gjZ-3X-GOg"/>
+                                    <constraint firstItem="RvR-Jn-UJS" firstAttribute="top" secondItem="W4a-0G-nRv" secondAttribute="bottom" constant="8" id="gjZ-3X-GOg">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="18"/>
+                                    </constraint>
                                     <constraint firstItem="qap-JR-9yT" firstAttribute="leading" secondItem="HaJ-0Z-Blc" secondAttribute="leading" constant="19" id="spc-Gz-nsS"/>
-                                    <constraint firstItem="AiE-u2-YOE" firstAttribute="top" secondItem="JU4-0a-wfv" secondAttribute="bottom" constant="8" id="t9x-2i-jy4"/>
+                                    <constraint firstItem="AiE-u2-YOE" firstAttribute="top" secondItem="JU4-0a-wfv" secondAttribute="bottom" constant="8" id="t9x-2i-jy4">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="18"/>
+                                    </constraint>
                                     <constraint firstItem="JU4-0a-wfv" firstAttribute="leading" secondItem="HaJ-0Z-Blc" secondAttribute="leading" constant="19" id="wEm-ra-XFI"/>
                                     <constraint firstItem="cRG-hg-oEf" firstAttribute="leading" secondItem="HaJ-0Z-Blc" secondAttribute="leading" constant="19" id="y63-VN-WYy"/>
                                     <constraint firstAttribute="trailing" secondItem="qap-JR-9yT" secondAttribute="trailing" constant="8" id="zPc-1M-NAP"/>

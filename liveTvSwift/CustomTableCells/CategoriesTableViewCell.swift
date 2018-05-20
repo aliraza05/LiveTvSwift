@@ -15,14 +15,21 @@ class CategoriesTableViewCell: UITableViewCell {
     @IBOutlet weak var thumbnail_imgV: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        categoryImageView.layer.cornerRadius = 15
-        categoryImageView.clipsToBounds = true
         
-        thumbnail_imgV.layer.cornerRadius = 30
-        thumbnail_imgV.clipsToBounds = true
         // Initialization code
     }
 
+    override func layoutSubviews() {
+        
+        super.layoutSubviews()
+        
+        categoryImageView.layer.cornerRadius = 15
+        categoryImageView.clipsToBounds = true
+        
+        thumbnail_imgV.layer.cornerRadius = 0.5 * thumbnail_imgV.bounds.size.width
+        thumbnail_imgV.clipsToBounds = true
+        
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -38,7 +45,12 @@ class CategoriesTableViewCell: UITableViewCell {
         }
         if let thumburl = URL(string: event.thumbnail_image)
         {
-            categoryImageView.kf.setImage(with: thumburl, placeholder: #imageLiteral(resourceName: "ball"))
+            categoryImageView.kf.setImage(with: thumburl, completionHandler: {
+                (image, error, cacheType, imageUrl) in
+                
+                self.setNeedsLayout()
+            })
+            
         }
     }
 }

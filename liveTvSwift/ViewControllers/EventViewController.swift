@@ -131,6 +131,20 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     // MARK: TableView Data Source
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        if (UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad)
+        {
+            // Ipad
+            return 400
+        }
+        else
+        {
+            // Iphone
+            return 180
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return tableDataArray.count
@@ -139,6 +153,9 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     {
         let cell: EventTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! EventTableViewCell
 
+        
+        cell.contentView.layoutIfNeeded()
+        
         // Configure the cell...
         
         let event: Event = tableDataArray[indexPath.row]
@@ -148,6 +165,18 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
     
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//
+//        let celltwo : EventTableViewCell = cell as! EventTableViewCell
+//
+//
+//        celltwo.iconView?.layer.cornerRadius = (celltwo.iconView?.frame.size.width)! / 2
+//        celltwo.iconView?.layer.masksToBounds = true
+//
+//        celltwo.iconImageView?.layer.cornerRadius = (celltwo.iconImageView?.frame.size.width)! / 2
+//        celltwo.iconImageView?.layer.masksToBounds = true
+//    }
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: true)

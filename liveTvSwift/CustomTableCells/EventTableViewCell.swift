@@ -19,18 +19,23 @@ class EventTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+    }
+    
+    override func layoutSubviews() {
+        
+        super.layoutSubviews()
+        
         containerView.layer.cornerRadius = 15
         containerView.clipsToBounds = true
         
-        iconView.layer.cornerRadius = 20
+        iconView.layer.cornerRadius = 0.5 * iconView.bounds.size.width
         iconView.clipsToBounds = true
-        
-        iconImageView.layer.cornerRadius = 30
+
+        iconImageView.layer.cornerRadius = iconImageView.frame.size.width/2
         iconImageView.clipsToBounds = true
         
-        // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -45,7 +50,20 @@ class EventTableViewCell: UITableViewCell {
         
         if let url = URL(string: event.image_url)
         {
-            iconImageView.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "ball"))
+//            iconImageView.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "ball"))
+            
+            iconImageView.kf.setImage(with: url, completionHandler: {
+                (image, error, cacheType, imageUrl) in
+                // image: Image? `nil` means failed
+                // error: NSError? non-`nil` means failed
+                // cacheType: CacheType
+                //                  .none - Just downloaded
+                //                  .memory - Got from memory cache
+                //                  .disk - Got from disk cache
+                // imageUrl: URL of the image
+                self.setNeedsLayout()
+            })
+            
         }
     }
     

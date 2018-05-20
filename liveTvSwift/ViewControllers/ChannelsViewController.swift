@@ -75,6 +75,20 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     // MARK: TableView Data Source
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        if (UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad)
+        {
+            // Ipad
+            return 200
+        }
+        else
+        {
+            // Iphone
+            return 90
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return tableDataArray.count
