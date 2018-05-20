@@ -129,7 +129,14 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
         
         player = BMPlayer(customControlView: controller)
         
+        player.alpha = 0.0
+
         APP_DELEGATE().window?.rootViewController?.view.addSubview(player)
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.player.alpha = 1.0
+        })
+        
         
         UIApplication.shared.keyWindow?.windowLevel = UIWindowLevelStatusBar
 
@@ -147,7 +154,15 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
             
             UIApplication.shared.keyWindow?.windowLevel = UIWindowLevelNormal
             APP_DELEGATE().myOrientation = .portrait
-            self.player.removeFromSuperview()
+            
+
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+                self.player.alpha = 0.0
+
+            }, completion: {
+                (finished: Bool) -> Void in
+                self.player.removeFromSuperview()
+            })
             
             AdsManager.sharedInstance.showInterstatial(nil, location: "aftervideo")
         }
@@ -159,8 +174,10 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
      
         let asset = BMPlayerResource(url: URL(string: channel.url)!,
                                      name: channel.name)
+        
+        
         player.setVideo(resource: asset)
-        AdsManager.sharedInstance.showInterstatial(nil, location: "beforevideo")
+//        AdsManager.sharedInstance.showInterstatial(nil, location: "beforevideo")
     }
     
     func setupPlayerManager() {
@@ -204,11 +221,11 @@ extension ChannelsViewController: BMPlayerDelegate {
     
     // Call back when play time change
     func bmPlayer(player: BMPlayer, playTimeDidChange currentTime: TimeInterval, totalTime: TimeInterval) {
-        //        print("| BMPlayerDelegate | playTimeDidChange | \(currentTime) of \(totalTime)")
+                print("| BMPlayerDelegate | playTimeDidChange | \(currentTime) of \(totalTime)")
     }
     
     // Call back when the video loaded duration changed
     func bmPlayer(player: BMPlayer, loadedTimeDidChange loadedDuration: TimeInterval, totalDuration: TimeInterval) {
-        //        print("| BMPlayerDelegate | loadedTimeDidChange | \(loadedDuration) of \(totalDuration)")
+                print("| BMPlayerDelegate | loadedTimeDidChange | \(loadedDuration) of \(totalDuration)")
     }
 }

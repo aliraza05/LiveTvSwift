@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CustomTableCells/EventTableViewCell.swift"
-            timestampString = "548516365.398391"
+            filePath = "ViewControllers/ChannelsViewController.swift"
+            timestampString = "548537753.680016"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "loadEvent(event:)"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "setupPlayerResource(channel:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
