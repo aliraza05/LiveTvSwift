@@ -130,16 +130,15 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
         player = BMPlayer(customControlView: controller)
         
         player.alpha = 0.0
+        UIApplication.shared.keyWindow?.windowLevel = UIWindowLevelStatusBar
 
         APP_DELEGATE().window?.rootViewController?.view.addSubview(player)
+//        APP_DELEGATE().window?.addSubview(player)
         
         UIView.animate(withDuration: 0.5, animations: {
             self.player.alpha = 1.0
         })
         
-        
-        UIApplication.shared.keyWindow?.windowLevel = UIWindowLevelStatusBar
-
         //        view.addSubview(player)
         
         player.snp.makeConstraints { (make) in
@@ -152,16 +151,21 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
         player.delegate = self
         player.backBlock = { [unowned self] (isFullScreen) in
             
-            UIApplication.shared.keyWindow?.windowLevel = UIWindowLevelNormal
             APP_DELEGATE().myOrientation = .portrait
-            
+            UIApplication.shared.keyWindow?.windowLevel = UIWindowLevelStatusBar
+
 
             UIView.animate(withDuration: 0.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
                 self.player.alpha = 0.0
 
             }, completion: {
                 (finished: Bool) -> Void in
+                self.player.pause(allowAutoPlay: false)
                 self.player.removeFromSuperview()
+                if (self.player) != nil
+                {
+                    self.player.prepareToDealloc()
+                }
             })
             
             AdsManager.sharedInstance.showInterstatial(nil, location: "aftervideo")
@@ -177,7 +181,7 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
         
         
         player.setVideo(resource: asset)
-//        AdsManager.sharedInstance.showInterstatial(nil, location: "beforevideo")
+        AdsManager.sharedInstance.showInterstatial(nil, location: "beforevideo")
     }
     
     func setupPlayerManager() {
@@ -192,6 +196,10 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
         BMPlayerConf.topBarShowInCase = .always
         BMPlayerConf.loaderType  = NVActivityIndicatorType.ballRotateChase
     }
+    
+    open override var prefersStatusBarHidden: Bool {
+        return true }
+
 }
 // MARK:- BMPlayerDelegate example
 extension ChannelsViewController: BMPlayerDelegate {

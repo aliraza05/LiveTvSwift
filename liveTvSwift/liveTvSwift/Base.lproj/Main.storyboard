@@ -257,6 +257,24 @@
                                             <action selector="versionAction:" destination="hsN-Yi-s0V" eventType="touchUpInside" id="e0Q-YU-gCJ"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ey-vV-oST">
+                                        <rect key="frame" x="19" y="185" width="200" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="JjZ-yC-rkC"/>
+                                            <constraint firstAttribute="width" constant="200" id="gzf-dv-6u9"/>
+                                        </constraints>
+                                        <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="More Apps" image="moreApps">
+                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="moreAppsAction:" destination="hsN-Yi-s0V" eventType="touchUpInside" id="T46-Mv-yIA"/>
+                                            <action selector="versionAction:" destination="hsN-Yi-s0V" eventType="touchUpInside" id="rb3-ni-MYw"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qap-JR-9yT">
                                         <rect key="frame" x="19" y="472" width="318" height="47"/>
                                         <constraints>
@@ -276,6 +294,9 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="3ey-vV-oST" firstAttribute="top" secondItem="AiE-u2-YOE" secondAttribute="bottom" constant="8" id="Cj7-Cm-Azh">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="18"/>
+                                    </constraint>
                                     <constraint firstItem="W4a-0G-nRv" firstAttribute="top" secondItem="cRG-hg-oEf" secondAttribute="bottom" constant="6" id="D1A-7N-Ehj">
                                         <variation key="heightClass=regular-widthClass=regular" constant="16"/>
                                     </constraint>
@@ -286,6 +307,7 @@
                                     <constraint firstItem="cRG-hg-oEf" firstAttribute="top" secondItem="HaJ-0Z-Blc" secondAttribute="top" constant="30" id="Twl-Bx-T3d"/>
                                     <constraint firstItem="AiE-u2-YOE" firstAttribute="leading" secondItem="HaJ-0Z-Blc" secondAttribute="leading" constant="19" id="VKu-1y-17C"/>
                                     <constraint firstItem="W4a-0G-nRv" firstAttribute="leading" secondItem="HaJ-0Z-Blc" secondAttribute="leading" constant="19" id="aVl-lT-mkZ"/>
+                                    <constraint firstItem="3ey-vV-oST" firstAttribute="leading" secondItem="HaJ-0Z-Blc" secondAttribute="leading" constant="19" id="dW5-wX-F6H"/>
                                     <constraint firstAttribute="bottom" secondItem="qap-JR-9yT" secondAttribute="bottom" constant="48" id="dwW-aa-JE8"/>
                                     <constraint firstItem="RvR-Jn-UJS" firstAttribute="top" secondItem="W4a-0G-nRv" secondAttribute="bottom" constant="8" id="gjZ-3X-GOg">
                                         <variation key="heightClass=regular-widthClass=regular" constant="18"/>
@@ -311,6 +333,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="More" image="more" id="Wgv-DV-eH1"/>
                     <connections>
+                        <outlet property="support_btn" destination="qap-JR-9yT" id="Ig0-jp-ZB8"/>
                         <outlet property="version_btn" destination="AiE-u2-YOE" id="AnY-kQ-5F8"/>
                     </connections>
                 </viewController>
@@ -383,6 +406,7 @@
         <image name="icon" width="24" height="24"/>
         <image name="mail" width="24" height="24"/>
         <image name="more" width="24" height="24"/>
+        <image name="moreApps" width="25" height="25"/>
         <image name="rate" width="24" height="24"/>
         <image name="television" width="24" height="24"/>
     </resources>

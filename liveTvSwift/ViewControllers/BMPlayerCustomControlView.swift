@@ -16,18 +16,22 @@ class BMPlayerCustomControlView: BMPlayerControlView {
      Override if need to customize UI components
      */
 
-    override func customizeUIComponents() {
-                
+    override func customizeUIComponents()
+    {
         chooseDefitionView.removeFromSuperview()
-        backButton.frame = CGRect(x: 5, y: 5, width: 100, height: 100)
-    }
-    
-    
-    
-    override func updateUI(_ isForFullScreen: Bool) {
-        super.updateUI(isForFullScreen)
+        backButton.snp.updateConstraints { (make) in
+            make.width.equalTo(200)
+        }
+        backButton.imageEdgeInsets = UIEdgeInsetsMake(5.0, 20.0, 0.0, 0.0)
+        backButton.contentHorizontalAlignment = .left
         
+        titleLabel.snp.updateConstraints { (make) in
+            make.left.equalTo(backButton.snp.right).offset(-150)
+        }
     }
     
-    
+    override func updateUI(_ isForFullScreen: Bool)
+    {
+        super.updateUI(isForFullScreen)
+    }
 }

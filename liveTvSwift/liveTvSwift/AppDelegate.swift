@@ -27,6 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GADMobileAds.configure(withApplicationID: "ca-app-pub-2498422838695550~2955082663")
         // Override point for customization after application launch.
         AdsManager.sharedInstance.initAds()
+        
+        application.isStatusBarHidden = true
+        
         return true
     }
 
