@@ -80,7 +80,7 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
         if (UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad)
         {
             // Ipad
-            return 200
+            return 125
         }
         else
         {

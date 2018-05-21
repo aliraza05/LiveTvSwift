@@ -77,7 +77,9 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="D1w-eR-If4" secondAttribute="trailing" constant="18" id="2VE-qz-CYB"/>
                             <constraint firstItem="nom-QA-4sc" firstAttribute="top" secondItem="JOT-qp-Fd5" secondAttribute="top" constant="20" id="4dJ-oR-TKF"/>
-                            <constraint firstItem="nom-QA-4sc" firstAttribute="width" secondItem="JOT-qp-Fd5" secondAttribute="width" multiplier="60:288" id="4s8-qR-FL2"/>
+                            <constraint firstItem="nom-QA-4sc" firstAttribute="width" secondItem="JOT-qp-Fd5" secondAttribute="width" multiplier="60:288" id="4s8-qR-FL2">
+                                <variation key="heightClass=regular-widthClass=regular" constant="-20"/>
+                            </constraint>
                             <constraint firstAttribute="bottom" secondItem="7zs-aR-SP1" secondAttribute="bottom" constant="8" id="Nim-cB-5e4"/>
                             <constraint firstAttribute="trailing" secondItem="7zs-aR-SP1" secondAttribute="trailing" constant="8" id="e9z-Nv-LdS"/>
                             <constraint firstItem="D1w-eR-If4" firstAttribute="top" secondItem="JOT-qp-Fd5" secondAttribute="top" constant="29" id="j4a-tm-tnq"/>

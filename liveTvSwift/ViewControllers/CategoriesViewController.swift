@@ -105,7 +105,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         if (UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad)
         {
             // Ipad
-            return 600
+            return 415
         }
         else
         {

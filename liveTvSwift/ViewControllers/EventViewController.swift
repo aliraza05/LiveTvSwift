@@ -153,7 +153,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if (UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad)
         {
             // Ipad
-            return 400
+            return 300
         }
         else
         {

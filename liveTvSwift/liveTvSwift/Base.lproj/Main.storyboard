@@ -41,6 +41,9 @@
                                                 <constraint firstAttribute="width" constant="106" id="fKj-Af-IHg"/>
                                             </constraints>
                                             <state key="normal" title="Request"/>
+                                            <variation key="heightClass=regular-widthClass=regular">
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            </variation>
                                             <connections>
                                                 <action selector="requestAction:" destination="9pv-A4-QxB" eventType="touchUpInside" id="eZ8-4T-kpn"/>
                                             </connections>

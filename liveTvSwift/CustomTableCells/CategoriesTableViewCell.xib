@@ -43,7 +43,9 @@
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="epJ-8V-DAB" secondAttribute="bottom" constant="7.5" id="EST-dO-0UY"/>
                     <constraint firstAttribute="trailing" secondItem="epJ-8V-DAB" secondAttribute="trailing" constant="15" id="TBv-Jx-vCd"/>
-                    <constraint firstItem="5TU-ci-njR" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="30:320" id="UBK-k8-f6W"/>
+                    <constraint firstItem="5TU-ci-njR" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="30:320" id="UBK-k8-f6W">
+                        <variation key="heightClass=regular-widthClass=regular" constant="-15"/>
+                    </constraint>
                     <constraint firstItem="5TU-ci-njR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vXu-pb-CHW" secondAttribute="trailing" constant="10" id="ZYL-u3-x0U"/>
                     <constraint firstItem="vXu-pb-CHW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="eMT-Xq-Kne"/>
                     <constraint firstItem="vXu-pb-CHW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="gAy-1Q-NUT"/>
