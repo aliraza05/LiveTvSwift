@@ -17,10 +17,19 @@ class APIManager: NSObject {
     func fetchDataWithAppID(onSuccess: @escaping(JSON) -> Void, onFailure: @escaping(Error) -> Void){
     let url : String = BASE_URL
     let request: NSMutableURLRequest = NSMutableURLRequest(url: NSURL(string: url)! as URL)
+    
+    var appVersion = "1.0"
+        
+    if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+    {
+        appVersion = version
+    }
+        
     request.httpMethod = "POST"
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
     let params = ["id"        : String(APP_ID),
-                  "auth_token": AUTH_TOKEN]
+                  "auth_token": AUTH_TOKEN,
+                  "build_no": appVersion]
 
     let session = URLSession.shared
         do {

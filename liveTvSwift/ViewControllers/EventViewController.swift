@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import MessageUI
 
 
-class EventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class EventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var tableViewEvent: UITableView!
     @IBOutlet weak var dateTime_lbl: UILabel!
@@ -60,6 +61,22 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         fetchAppData()
     }
     
+    @IBAction func requestAction(_ sender: Any) {
+        if MFMailComposeViewController.canSendMail() {
+            let emailTitle = "Channel Addition Request"
+            let messageBody = ""
+            let toRecipents = [FEEDBACK_EMAIL]
+            let mc: MFMailComposeViewController = MFMailComposeViewController()
+            mc.mailComposeDelegate = self
+            mc.setSubject(emailTitle)
+            mc.setMessageBody(messageBody, isHTML: false)
+            mc.setToRecipients(toRecipents)
+            self.present(mc, animated: true, completion: nil)
+        }else {
+            print("Cannot send mail")
+            // give feedback to the user
+        }
+    }
     // MARK: Netwrok Calling
     func fetchAppData()
     {
@@ -165,18 +182,6 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//
-//        let celltwo : EventTableViewCell = cell as! EventTableViewCell
-//
-//
-//        celltwo.iconView?.layer.cornerRadius = (celltwo.iconView?.frame.size.width)! / 2
-//        celltwo.iconView?.layer.masksToBounds = true
-//
-//        celltwo.iconImageView?.layer.cornerRadius = (celltwo.iconImageView?.frame.size.width)! / 2
-//        celltwo.iconImageView?.layer.masksToBounds = true
-//    }
-
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: true)
@@ -191,6 +196,12 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let channelVC = segue.destination as! ChannelsViewController
             channelVC.event = sender as? Event
         }
+    }
+    
+    // MARK: - MFMailComposeViewControllerDelegate
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
     }
 }
 

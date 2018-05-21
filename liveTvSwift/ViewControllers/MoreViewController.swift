@@ -37,8 +37,8 @@ class MoreViewController: UIViewController,MFMailComposeViewControllerDelegate {
     @IBAction func mailAction(_ sender: Any) {
         
         if MFMailComposeViewController.canSendMail() {
-            let emailTitle = "Feedback"
-            let messageBody = "Feature request or bug report?"
+            let emailTitle = "Live Sports TV"
+            let messageBody = ""
             let toRecipents = [FEEDBACK_EMAIL]
             let mc: MFMailComposeViewController = MFMailComposeViewController()
             mc.mailComposeDelegate = self

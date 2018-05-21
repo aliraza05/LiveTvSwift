@@ -19,7 +19,7 @@ let TERMS_URL                    = "http://onlinemobilestream.com"
 let MORE_APPS_URL                = "http://onlinemobilestream.com"
 let RATE_US_URL                  = "http://onlinemobilestream.com"
 
-let FEEDBACK_EMAIL               = "apucit@gmail.com"
+let FEEDBACK_EMAIL               = "cricketcrazeios3@gmail.com"
 
 let ADD_BLOCKER_CHECKING_TIME    = 30.0
 let APP_DISABLED_MESSAGE         = "Server communication error we will get back to you soon"
