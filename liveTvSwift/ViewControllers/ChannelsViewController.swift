@@ -152,7 +152,7 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
         player.backBlock = { [unowned self] (isFullScreen) in
             
             APP_DELEGATE().myOrientation = .portrait
-            UIApplication.shared.keyWindow?.windowLevel = UIWindowLevelStatusBar
+            UIApplication.shared.keyWindow?.windowLevel = UIWindowLevelNormal
 
 
             UIView.animate(withDuration: 0.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
@@ -196,9 +196,6 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
         BMPlayerConf.topBarShowInCase = .always
         BMPlayerConf.loaderType  = NVActivityIndicatorType.ballRotateChase
     }
-    
-    open override var prefersStatusBarHidden: Bool {
-        return true }
 
 }
 // MARK:- BMPlayerDelegate example
