@@ -55,9 +55,9 @@ class SplashViewController: UIViewController {
             }
             
         }
-//        self.perform(#selector(hideSplash), with: nil, afterDelay: TimeInterval(splashTime))
+        self.perform(#selector(hideSplash), with: nil, afterDelay: TimeInterval(splashTime))
 
-        self.perform(#selector(hideSplash), with: nil, afterDelay: 3.0)
+//        self.perform(#selector(hideSplash), with: nil, afterDelay: 3.0)
         // Do any additional setup after loading the view.
     }
 
