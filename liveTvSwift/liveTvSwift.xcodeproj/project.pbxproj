@@ -65,6 +65,8 @@
 /* Begin PBXFileReference section */
 		421D61655E200372378F9A5B /* Pods-liveTvSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-liveTvSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-liveTvSwift/Pods-liveTvSwift.release.xcconfig"; sourceTree = "<group>"; };
 		AEC5F22875BF4907669C5A12 /* Pods-liveTvSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-liveTvSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-liveTvSwift/Pods-liveTvSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		FB0F510B20B4ADF4003BAD68 /* iTunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iTunesArtwork@2x"; sourceTree = "<group>"; };
+		FB0F510C20B4ADF6003BAD68 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		FB2FE2D620A0301800582A40 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		FB38459220932CE900123B27 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		FB38459320932CE900123B27 /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
@@ -273,6 +275,8 @@
 		FBB5DD4920920A9900CE51FE /* liveTvSwift */ = {
 			isa = PBXGroup;
 			children = (
+				FB0F510C20B4ADF6003BAD68 /* iTunesArtwork */,
+				FB0F510B20B4ADF4003BAD68 /* iTunesArtwork@2x */,
 				FBBBDEE3209C41CC00CAEAA8 /* Constants.swift */,
 				FBB5DD4A20920A9900CE51FE /* AppDelegate.swift */,
 				FBB5DD5020920A9900CE51FE /* Main.storyboard */,

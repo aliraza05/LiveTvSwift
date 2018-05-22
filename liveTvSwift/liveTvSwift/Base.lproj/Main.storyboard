@@ -416,15 +416,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="file" width="24" height="24"/>
-        <image name="file_blue" width="24" height="24"/>
-        <image name="heart" width="32" height="32"/>
-        <image name="icon" width="24" height="24"/>
-        <image name="mail" width="24" height="24"/>
-        <image name="more" width="24" height="24"/>
-        <image name="moreApps" width="25" height="25"/>
-        <image name="rate" width="24" height="24"/>
-        <image name="television" width="24" height="24"/>
+        <image name="file" width="25" height="27"/>
+        <image name="file_blue" width="25" height="27"/>
+        <image name="heart" width="25" height="27"/>
+        <image name="icon" width="25" height="27"/>
+        <image name="mail" width="25" height="27"/>
+        <image name="more" width="25" height="27"/>
+        <image name="moreApps" width="25" height="27"/>
+        <image name="rate" width="25" height="27"/>
+        <image name="television" width="25" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="U2O-h0-NLS"/>
