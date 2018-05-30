@@ -126,7 +126,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 if key == "ShowSplash"
                 {
                     let showSplash:Bool = config["value"].boolValue
-                    if !showSplash
+                    if showSplash
                     {
                         DispatchQueue.main.async
                         {
