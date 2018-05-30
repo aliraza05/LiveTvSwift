@@ -23,5 +23,11 @@
     }
     return NO;
 }
++(NSString*)getIP
+{
+    NSString *publicIP = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"https://icanhazip.com/"] encoding:NSUTF8StringEncoding error:nil];
+    publicIP = [publicIP stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+    return publicIP;
+}
 
 @end

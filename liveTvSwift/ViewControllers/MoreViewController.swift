@@ -58,7 +58,7 @@ class MoreViewController: UIViewController,MFMailComposeViewControllerDelegate {
     }
     
     @IBAction func rateusAction(_ sender: Any) {
-        openURL(url: TERMS_URL)
+        openURL(url: RATE_US_URL)
     }
     
     @IBAction func versionAction(_ sender: Any) {
@@ -66,10 +66,12 @@ class MoreViewController: UIViewController,MFMailComposeViewControllerDelegate {
     
     @IBAction func supportAction(_ sender: Any)
     {
+        AdsManager.sharedInstance.showVideoAd(location: "videoad")
     }
     @IBAction func moreAppsAction(_ sender: Any)
     {
-        openURL(url: TERMS_URL)
+        AdsManager.sharedInstance.showInterstatial(nil, location: "more_apps")
+//        openURL(url: MORE_APPS_URL)
     }
     
     // MARK: Helper Method

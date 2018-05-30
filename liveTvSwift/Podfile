@@ -1,4 +1,4 @@
-target ‘liveTvSwift’ do
+target ‘LiveSportsTVHD’ do
 pod 'Google-Mobile-Ads-SDK'
 
 end

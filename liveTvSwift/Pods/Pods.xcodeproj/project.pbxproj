@@ -3,79 +3,89 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		703C302962FC435B79B93BDBCE1E3DFD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		D006B2B8E9880097BD628CABC4D7C5AC /* Pods-liveTvSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2246F5655A6067913D006FF2410A88 /* Pods-liveTvSwift-dummy.m */; };
+		408DD6A1677770743944E3ED5993249C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		A70C1BCF47779003B6D03440F307B6D0 /* Pods-LiveSportsTVHD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DC0E867627E3378574C2ECEDC9BD80 /* Pods-LiveSportsTVHD-dummy.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		FB35C82320BDF37F001E2ABE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB35C81D20BDF37F001E2ABE /* LiveSportsTVHD.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FBB5DD4720920A9900CE51FE;
+			remoteInfo = LiveSportsTVHD;
+		};
+		FB35C82520BDF37F001E2ABE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB35C81D20BDF37F001E2ABE /* LiveSportsTVHD.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FBB5DD5D20920A9900CE51FE;
+			remoteInfo = LiveSportsTVHDTests;
+		};
+		FB35C82720BDF37F001E2ABE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB35C81D20BDF37F001E2ABE /* LiveSportsTVHD.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FBB5DD6820920A9900CE51FE;
+			remoteInfo = LiveSportsTVHDUITests;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		017F50967E8665E036E137BB87663204 /* Pods-liveTvSwift-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-liveTvSwift-acknowledgements.markdown"; sourceTree = "<group>"; };
-		1D2246F5655A6067913D006FF2410A88 /* Pods-liveTvSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-liveTvSwift-dummy.m"; sourceTree = "<group>"; };
-		397CC52C29F299F9B7371336D9CB85C3 /* Pods-liveTvSwift-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-liveTvSwift-resources.sh"; sourceTree = "<group>"; };
-		44A36355E0C4D3B204E35350F78C8E11 /* libPods-liveTvSwift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-liveTvSwift.a"; path = "libPods-liveTvSwift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		560B981C107125BF7A0318C19A5BF942 /* Pods-liveTvSwift-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-liveTvSwift-acknowledgements.plist"; sourceTree = "<group>"; };
-		60F61037E9ABDD3EC6A63EE37D037860 /* Pods-liveTvSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-liveTvSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		2876BCB6D40A99CA698167C9940C3467 /* Pods-LiveSportsTVHD-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LiveSportsTVHD-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4CA168C15FCE10787E74F3CC248216F5 /* Pods-LiveSportsTVHD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LiveSportsTVHD.release.xcconfig"; sourceTree = "<group>"; };
+		5403682E8F1F03F8DCD1791F74B8B322 /* Pods-LiveSportsTVHD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LiveSportsTVHD.debug.xcconfig"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C722CFDD4FBC35421CEA8B857DFC0DC6 /* Pods-liveTvSwift-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-liveTvSwift-frameworks.sh"; sourceTree = "<group>"; };
-		ED257297CE666830EB1B320B3B3DC135 /* Pods-liveTvSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-liveTvSwift.release.xcconfig"; sourceTree = "<group>"; };
+		75DC0E867627E3378574C2ECEDC9BD80 /* Pods-LiveSportsTVHD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LiveSportsTVHD-dummy.m"; sourceTree = "<group>"; };
+		8CB6C95585A5D81970C1F855E9016CE7 /* Pods-LiveSportsTVHD-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LiveSportsTVHD-resources.sh"; sourceTree = "<group>"; };
+		905BCDF3B7C909494528167A2508C675 /* Pods-LiveSportsTVHD-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LiveSportsTVHD-acknowledgements.plist"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9805E08861EABB879A586D9D9D9BC5DD /* Pods-LiveSportsTVHD-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LiveSportsTVHD-frameworks.sh"; sourceTree = "<group>"; };
+		BA6CC334C30F997531CA5A78D8B55AD7 /* libPods-LiveSportsTVHD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LiveSportsTVHD.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F87BBE855D70C2F87C02A1CCA30E262D /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = Frameworks/frameworks/GoogleMobileAds.framework; sourceTree = "<group>"; };
+		FB35C81D20BDF37F001E2ABE /* LiveSportsTVHD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LiveSportsTVHD.xcodeproj; path = ../LiveSportsTVHD.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5CBB3612F6DB6E3E10E0D3C15047DB82 /* Frameworks */ = {
+		D0C891DFF0B64A39671C27CC3DC585ED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				703C302962FC435B79B93BDBCE1E3DFD /* Foundation.framework in Frameworks */,
+				408DD6A1677770743944E3ED5993249C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		11D645ED3B9F4FFFBE74F9C955AE9137 /* Targets Support Files */ = {
+		3033BB3F110DEBCED3EC2456F6CD6F18 /* Pods-LiveSportsTVHD */ = {
 			isa = PBXGroup;
 			children = (
-				4D8578DA71C1A12D44E32E9BF5B47C1E /* Pods-liveTvSwift */,
+				2876BCB6D40A99CA698167C9940C3467 /* Pods-LiveSportsTVHD-acknowledgements.markdown */,
+				905BCDF3B7C909494528167A2508C675 /* Pods-LiveSportsTVHD-acknowledgements.plist */,
+				75DC0E867627E3378574C2ECEDC9BD80 /* Pods-LiveSportsTVHD-dummy.m */,
+				9805E08861EABB879A586D9D9D9BC5DD /* Pods-LiveSportsTVHD-frameworks.sh */,
+				8CB6C95585A5D81970C1F855E9016CE7 /* Pods-LiveSportsTVHD-resources.sh */,
+				5403682E8F1F03F8DCD1791F74B8B322 /* Pods-LiveSportsTVHD.debug.xcconfig */,
+				4CA168C15FCE10787E74F3CC248216F5 /* Pods-LiveSportsTVHD.release.xcconfig */,
 			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		4D8578DA71C1A12D44E32E9BF5B47C1E /* Pods-liveTvSwift */ = {
-			isa = PBXGroup;
-			children = (
-				017F50967E8665E036E137BB87663204 /* Pods-liveTvSwift-acknowledgements.markdown */,
-				560B981C107125BF7A0318C19A5BF942 /* Pods-liveTvSwift-acknowledgements.plist */,
-				1D2246F5655A6067913D006FF2410A88 /* Pods-liveTvSwift-dummy.m */,
-				C722CFDD4FBC35421CEA8B857DFC0DC6 /* Pods-liveTvSwift-frameworks.sh */,
-				397CC52C29F299F9B7371336D9CB85C3 /* Pods-liveTvSwift-resources.sh */,
-				60F61037E9ABDD3EC6A63EE37D037860 /* Pods-liveTvSwift.debug.xcconfig */,
-				ED257297CE666830EB1B320B3B3DC135 /* Pods-liveTvSwift.release.xcconfig */,
-			);
-			name = "Pods-liveTvSwift";
-			path = "Target Support Files/Pods-liveTvSwift";
-			sourceTree = "<group>";
-		};
-		5E150CF5771D1B58B0DD3FC4C5F9A461 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				44A36355E0C4D3B204E35350F78C8E11 /* libPods-liveTvSwift.a */,
-			);
-			name = Products;
+			name = "Pods-LiveSportsTVHD";
+			path = "Target Support Files/Pods-LiveSportsTVHD";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
+				FB35C81D20BDF37F001E2ABE /* LiveSportsTVHD.xcodeproj */,
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				820FBBDA65C5B1A6A4C379A893C27235 /* Pods */,
-				5E150CF5771D1B58B0DD3FC4C5F9A461 /* Products */,
-				11D645ED3B9F4FFFBE74F9C955AE9137 /* Targets Support Files */,
+				84074595467C577BB7E43378D83449B0 /* Products */,
+				DBDEDD4A82A0A2E3B6E8F7BD47D47F09 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +95,14 @@
 				E91D6015731707498AAA5817D350B87B /* Google-Mobile-Ads-SDK */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		84074595467C577BB7E43378D83449B0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BA6CC334C30F997531CA5A78D8B55AD7 /* libPods-LiveSportsTVHD.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		953FD61A3CECC96530CB5CA297A086C1 /* Frameworks */ = {
@@ -111,32 +129,49 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		DBDEDD4A82A0A2E3B6E8F7BD47D47F09 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3033BB3F110DEBCED3EC2456F6CD6F18 /* Pods-LiveSportsTVHD */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
 		E91D6015731707498AAA5817D350B87B /* Google-Mobile-Ads-SDK */ = {
 			isa = PBXGroup;
 			children = (
 				953FD61A3CECC96530CB5CA297A086C1 /* Frameworks */,
 			);
-			name = "Google-Mobile-Ads-SDK";
 			path = "Google-Mobile-Ads-SDK";
+			sourceTree = "<group>";
+		};
+		FB35C81E20BDF37F001E2ABE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FB35C82420BDF37F001E2ABE /* Live Sports TV HD.app */,
+				FB35C82620BDF37F001E2ABE /* LiveSportsTVHDTests.xctest */,
+				FB35C82820BDF37F001E2ABE /* LiveSportsTVHDUITests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A57ECEE773E36140B130AB185FB9DCD4 /* Pods-liveTvSwift */ = {
+		583ED102DAAA7E8F9084233EEEBCAFF1 /* Pods-LiveSportsTVHD */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 88637B47DF41002BDBE529D38AA13D53 /* Build configuration list for PBXNativeTarget "Pods-liveTvSwift" */;
+			buildConfigurationList = E49EF949078A906914D538CCE61A36BC /* Build configuration list for PBXNativeTarget "Pods-LiveSportsTVHD" */;
 			buildPhases = (
-				1B8F6F1063234F85193D352B554319B4 /* Sources */,
-				5CBB3612F6DB6E3E10E0D3C15047DB82 /* Frameworks */,
+				B9971E2A4D39303EF7A6FC32E006CCA8 /* Sources */,
+				D0C891DFF0B64A39671C27CC3DC585ED /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-liveTvSwift";
-			productName = "Pods-liveTvSwift";
-			productReference = 44A36355E0C4D3B204E35350F78C8E11 /* libPods-liveTvSwift.a */;
+			name = "Pods-LiveSportsTVHD";
+			productName = "Pods-LiveSportsTVHD";
+			productReference = BA6CC334C30F997531CA5A78D8B55AD7 /* libPods-LiveSportsTVHD.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -156,21 +191,51 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 5E150CF5771D1B58B0DD3FC4C5F9A461 /* Products */;
+			productRefGroup = 84074595467C577BB7E43378D83449B0 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FB35C81E20BDF37F001E2ABE /* Products */;
+					ProjectRef = FB35C81D20BDF37F001E2ABE /* LiveSportsTVHD.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
-				A57ECEE773E36140B130AB185FB9DCD4 /* Pods-liveTvSwift */,
+				583ED102DAAA7E8F9084233EEEBCAFF1 /* Pods-LiveSportsTVHD */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		FB35C82420BDF37F001E2ABE /* Live Sports TV HD.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Live Sports TV HD.app";
+			remoteRef = FB35C82320BDF37F001E2ABE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FB35C82620BDF37F001E2ABE /* LiveSportsTVHDTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = LiveSportsTVHDTests.xctest;
+			remoteRef = FB35C82520BDF37F001E2ABE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FB35C82820BDF37F001E2ABE /* LiveSportsTVHDUITests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = LiveSportsTVHDUITests.xctest;
+			remoteRef = FB35C82720BDF37F001E2ABE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXSourcesBuildPhase section */
-		1B8F6F1063234F85193D352B554319B4 /* Sources */ = {
+		B9971E2A4D39303EF7A6FC32E006CCA8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D006B2B8E9880097BD628CABC4D7C5AC /* Pods-liveTvSwift-dummy.m in Sources */,
+				A70C1BCF47779003B6D03440F307B6D0 /* Pods-LiveSportsTVHD-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,28 +300,6 @@
 			};
 			name = Release;
 		};
-		5C2ECFD80A7F548147443A9CA1E0E3E0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60F61037E9ABDD3EC6A63EE37D037860 /* Pods-liveTvSwift.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 		9DAE5233986C01ADB6E67169C53A3FD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -320,9 +363,9 @@
 			};
 			name = Debug;
 		};
-		ED5FB4E32F56F365CECF8651F4FBA755 /* Release */ = {
+		B310C741F08BFEC45388291DD16C52B6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED257297CE666830EB1B320B3B3DC135 /* Pods-liveTvSwift.release.xcconfig */;
+			baseConfigurationReference = 4CA168C15FCE10787E74F3CC248216F5 /* Pods-LiveSportsTVHD.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -343,6 +386,28 @@
 			};
 			name = Release;
 		};
+		B4C887B62707A584F1463CB64DA32667 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5403682E8F1F03F8DCD1791F74B8B322 /* Pods-LiveSportsTVHD.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -355,11 +420,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		88637B47DF41002BDBE529D38AA13D53 /* Build configuration list for PBXNativeTarget "Pods-liveTvSwift" */ = {
+		E49EF949078A906914D538CCE61A36BC /* Build configuration list for PBXNativeTarget "Pods-LiveSportsTVHD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5C2ECFD80A7F548147443A9CA1E0E3E0 /* Debug */,
-				ED5FB4E32F56F365CECF8651F4FBA755 /* Release */,
+				B4C887B62707A584F1463CB64DA32667 /* Debug */,
+				B310C741F08BFEC45388291DD16C52B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

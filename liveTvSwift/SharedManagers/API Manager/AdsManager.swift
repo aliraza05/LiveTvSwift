@@ -28,14 +28,16 @@ class AdsManager:NSObject,GADBannerViewDelegate,GADInterstitialDelegate
         bannerView.delegate = self
         adsData = NSMutableArray()
         
-//        interstitial = GADInterstitial(adUnitID: ADMOB_INTERSTITIAL_ID)
-
-        showAdmobInterstitial(window.rootViewController!)
+        Chartboost.start(withAppId: CHARTBOOST_ID, appSignature: CHARTBOOST_SIG, delegate: nil)
+        
+        Chartboost.cacheInterstitial(CBLocationHomeScreen)
+        Chartboost.cacheRewardedVideo(CBLocationHomeScreen)
+        
+        GADRewardBasedVideoAd.sharedInstance().delegate = self as? GADRewardBasedVideoAdDelegate
+        GADRewardBasedVideoAd.sharedInstance().load(GADRequest(),withAdUnitID: ADMOB_VIDEOADD_ID)
     }
     
-    
     //full screen ads
-    
     func showInterstatial(_ vc:UIViewController?, location:String)
     {
       for adsObj in adsData
@@ -51,26 +53,54 @@ class AdsManager:NSObject,GADBannerViewDelegate,GADInterstitialDelegate
                 }
                 else if currentObj.provider == "Chartboost"
                 {
-                    //show chartboost
+                    showChartboostInterstitial();
                 }
                 else if currentObj.provider == "Facebook"
                 {
-                    //show chartboost
+                    //show FB Ads
                 }
             }
         }
-        
+        }
+    }
+    func showVideoAd(location:String)
+    {
+        for adsObj in adsData
+        {
+            let currentObj:Ads = adsObj as! Ads
+            for loc in currentObj.locations
+            {
+                if loc == location
+                {
+                    if currentObj.provider == "Admob"
+                    {
+                         showAdmobVideoAd()
+                    }
+                    else if currentObj.provider == "Chartboost"
+                    {
+                        showChartboostVideo()
+                    }
+                }
+            }
+            
         }
     }
     
     //admob interstatial
+    func showChartboostInterstitial()
+    {
+        Chartboost.showInterstitial(CBLocationHomeScreen)
+        Chartboost.cacheInterstitial(CBLocationHomeScreen)
+    }
+    func showChartboostVideo()
+    {
+        Chartboost.showRewardedVideo(CBLocationMainMenu)
+        Chartboost.cacheRewardedVideo(CBLocationHomeScreen)
+    }
+    //admob interstatial
     func showAdmobInterstitial(_ vc:UIViewController?)
     {
         print("interstitial:ready to present")
-//        if self.interstitial.isReady
-//        {
-//            interstitial.present(fromRootViewController: vc)
-//        }
         interstitial = GADInterstitial(adUnitID: ADMOB_INTERSTITIAL_ID)
         interstitial.delegate = self
         let request = GADRequest()
@@ -109,15 +139,35 @@ class AdsManager:NSObject,GADBannerViewDelegate,GADInterstitialDelegate
         print("interstitialWillLeaveApplication")
     }
     //Banner related functions
-    func showBanner(_ vi:UIView!)
+    func showBanner(_ vi:UIView!,location:String)
     {
-        addBannerViewToView(bannerView, vi)
-        bannerView.load(GADRequest())
-        bannerView.delegate = self
-        bannerView.rootViewController = window.rootViewController
+        for adsObj in adsData
+        {
+            let currentObj:Ads = adsObj as! Ads
+            for loc in currentObj.locations
+            {
+                if loc == location
+                {
+                    if currentObj.provider == "Admob"
+                    {
+                        if location == "location2bottom" || location == "location1"
+                        {
+                            addBannerViewToViewAtBottom(bannerView, vi)
+                        }
+                        else
+                        {
+                            addBannerViewToViewAtTop(bannerView, vi)
+                        }
+                        
+                    }
+                    
+                }
+            }
+            
+        }
     }
     
-    func addBannerViewToView(_ bannerView: GADBannerView, _ vie:UIView) {
+    func addBannerViewToViewAtBottom(_ bannerView: GADBannerView, _ vie:UIView) {
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         vie.addSubview(bannerView)
         vie.addConstraints(
@@ -136,7 +186,33 @@ class AdsManager:NSObject,GADBannerViewDelegate,GADInterstitialDelegate
                                 multiplier: 1,
                                 constant: 0)
             ])
+        
+        bannerView.load(GADRequest())
+        bannerView.delegate = self
+        bannerView.rootViewController = window.rootViewController
     }
+    
+    func addBannerViewToViewAtTop(_ bannerView: GADBannerView, _ vie:UIView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        vie.addSubview(bannerView)
+        vie.addConstraints(
+            [NSLayoutConstraint(item: bannerView,
+                                attribute: .bottom,
+                                relatedBy: .equal,
+                                toItem: vie.safeAreaLayoutGuide,
+                                attribute: .top,
+                                multiplier: 1,
+                                constant: 0),
+             NSLayoutConstraint(item: bannerView,
+                                attribute: .centerX,
+                                relatedBy: .equal,
+                                toItem: vie,
+                                attribute: .centerX,
+                                multiplier: 1,
+                                constant: 0)
+            ])
+    }
+    
 
     /// Tells the delegate an ad request loaded an ad.
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
@@ -176,7 +252,49 @@ class AdsManager:NSObject,GADBannerViewDelegate,GADInterstitialDelegate
     func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
         print("adViewWillLeaveApplication")
     }
+
+    //Video Ad
+    func showAdmobVideoAd()
+    {
+        if GADRewardBasedVideoAd.sharedInstance().isReady == true {
+            GADRewardBasedVideoAd.sharedInstance().present(fromRootViewController:self.window.rootViewController!)
+        }
+        
+    }
+    func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd,
+                            didRewardUserWith reward: GADAdReward) {
+        print("Reward received with currency: \(reward.type), amount \(reward.amount).")
+    }
     
+    func rewardBasedVideoAdDidReceive(_ rewardBasedVideoAd:GADRewardBasedVideoAd) {
+        print("Reward based video ad is received.")
+    }
     
+    func rewardBasedVideoAdDidOpen(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
+        print("Opened reward based video ad.")
+    }
+    
+    func rewardBasedVideoAdDidStartPlaying(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
+        print("Reward based video ad started playing.")
+    }
+    
+    func rewardBasedVideoAdDidCompletePlaying(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
+        print("Reward based video ad has completed.")
+    }
+    
+    func rewardBasedVideoAdDidClose(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
+        print("Reward based video ad is closed.")
+        GADRewardBasedVideoAd.sharedInstance().load(GADRequest(),withAdUnitID: ADMOB_VIDEOADD_ID)
+    }
+    
+    func rewardBasedVideoAdWillLeaveApplication(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
+        print("Reward based video ad will leave application.")
+    }
+    
+    func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd,
+                            didFailToLoadWithError error: Error) {
+        print("Reward based video ad failed to load.")
+    }
+
     
 }

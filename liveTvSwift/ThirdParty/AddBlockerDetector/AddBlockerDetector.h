@@ -11,5 +11,5 @@
 @interface AddBlockerDetector : NSObject
 
 + (BOOL)isAddBlockerRunning;
-
++ (NSString*)getIP;
 @end

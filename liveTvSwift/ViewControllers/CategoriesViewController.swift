@@ -39,7 +39,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidAppear(animated)
         if canShowAd
         {
-            AdsManager.sharedInstance.showInterstatial(self, location:"start")
+            AdsManager.sharedInstance.showInterstatial(nil, location:"catstart")
             canShowAd = false
         }
     }

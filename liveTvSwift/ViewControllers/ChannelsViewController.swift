@@ -48,15 +48,22 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
                                                name: NSNotification.Name.UIApplicationWillEnterForeground,
                                                object: nil)
         
-        // Do any additional setup after loading the view.
+        AdsManager.sharedInstance.showInterstatial(nil, location: "middle")
     }
 
     @objc func applicationWillEnterForeground() {
-        player.play()
+        if player != nil
+        {
+            player.play()
+        }
+        
     }
     
     @objc func applicationDidEnterBackground() {
+        if player != nil
+        {
         player.pause(allowAutoPlay: false)
+        }
     }
     
     
@@ -174,14 +181,15 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
         
         self.view.layoutIfNeeded()
     }
+    
     func setupPlayerResource(channel: Channel) {
      
         let asset = BMPlayerResource(url: URL(string: channel.url)!,
                                      name: channel.name)
-        
-        
         player.setVideo(resource: asset)
         AdsManager.sharedInstance.showInterstatial(nil, location: "beforevideo")
+//        AdsManager.sharedInstance.showBanner(player,location: "location2top")
+//        AdsManager.sharedInstance.showBanner(player,location: "location2bottom")
     }
     
     func setupPlayerManager() {
@@ -234,3 +242,4 @@ extension ChannelsViewController: BMPlayerDelegate {
                 print("| BMPlayerDelegate | loadedTimeDidChange | \(loadedDuration) of \(totalDuration)")
     }
 }
+

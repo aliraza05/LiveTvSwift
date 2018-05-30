@@ -116,8 +116,10 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     // MARK: Data Parsing
     func parseNetworkDataAndUpdateUI(json: JSON)
     {
+        AdsManager.sharedInstance.adsData  = getAdsFromRespns(json: json)
         if isFirstTime
         {
+            AdsManager.sharedInstance.showInterstatial(nil, location: "start")
             for config in json["application_configurations"].arrayValue
             {
                 let key = config["key"].stringValue
@@ -135,10 +137,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 }
             }
         }
-        AdsManager.sharedInstance.adsData  = getAdsFromRespns(json: json)
-//        AdsManager.sharedInstance.showBanner(self.view)
-//        AdsManager.sharedInstance.showInterstatial(self, location:"start")
-        
+//        AdsManager.sharedInstance.showBanner(self.view)        
         //GetEventsFrom respnse is the parser function of Response class
         tableDataArray = getEventsFromRespns(json: json)
         DispatchQueue.main.async

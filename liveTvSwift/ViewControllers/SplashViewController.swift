@@ -42,7 +42,7 @@ class SplashViewController: UIViewController {
             }
             if key == "ShowButton"
             {
-                let showBtn:Bool = (config["value"] != nil)
+                let showBtn:Bool = config["value"].boolValue
                 download_btn.isHidden = !showBtn
             }
             if key == "ButtonLink"
