@@ -68,7 +68,13 @@ class SplashViewController: UIViewController {
     
     @IBAction func downloadAction(_ sender: Any)
     {
-        hideSplash()
+        //uncomment for testing
+//        buttonDownloadLink = "https://itunes.apple.com/us/app/invite-and-meet-relationship/id1187403952?mt=8"
+        let url = URL(string: buttonDownloadLink)
+
+        if UIApplication.shared.canOpenURL(url!) {
+            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+        }
     }
     
     @objc func hideSplash()
