@@ -1,16 +1,15 @@
 PODS:
+  - FAPanels (0.5.0)
   - Google-Mobile-Ads-SDK (7.30.0)
 
 DEPENDENCIES:
+  - FAPanels
   - Google-Mobile-Ads-SDK
 
-SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - Google-Mobile-Ads-SDK
-
 SPEC CHECKSUMS:
+  FAPanels: def3b6e1e407ea1d1198d1acddc9d855d9e418ec
   Google-Mobile-Ads-SDK: 7404f68120ae8682afeb5af001fbf4aad731c78e
 
-PODFILE CHECKSUM: d13e378d5b95fcf96e98cd4420d5cf94d3ba8171
+PODFILE CHECKSUM: 4a7fff3994998d48a1fe846d66e303d71b37d880
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.4.0

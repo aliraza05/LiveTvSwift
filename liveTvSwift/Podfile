@@ -1,4 +1,6 @@
-target ‘LiveSportsTVHD’ do
+use_frameworks!
+target 'LiveSportsTVHD' do
 pod 'Google-Mobile-Ads-SDK'
+pod 'FAPanels'
 
 end

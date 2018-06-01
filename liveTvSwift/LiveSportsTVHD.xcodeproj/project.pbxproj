@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ACB678A0A1255FC0A2FCB664 /* libPods-LiveSportsTVHD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AFAE7FE4027D2AEB90BD8281 /* libPods-LiveSportsTVHD.a */; };
+		8D64E8C061AD6646E536061C /* Pods_LiveSportsTVHD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B5C0DA606A5892C868E185 /* Pods_LiveSportsTVHD.framework */; };
 		FB2FE2D720A0301900582A40 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB2FE2D620A0301800582A40 /* Kingfisher.framework */; };
 		FB38459420932CE900123B27 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB38459220932CE900123B27 /* EventViewController.swift */; };
 		FB38459520932CE900123B27 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB38459320932CE900123B27 /* CategoriesViewController.swift */; };
@@ -76,7 +76,7 @@
 		51EBC43F672024DEFEA51497 /* Pods-LiveSportsTVHD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiveSportsTVHD.release.xcconfig"; path = "Pods/Target Support Files/Pods-LiveSportsTVHD/Pods-LiveSportsTVHD.release.xcconfig"; sourceTree = "<group>"; };
 		6C554E5A21CD59B03FFB5080 /* Pods-LiveSportsTVHD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiveSportsTVHD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LiveSportsTVHD/Pods-LiveSportsTVHD.debug.xcconfig"; sourceTree = "<group>"; };
 		AEC5F22875BF4907669C5A12 /* Pods-liveTvSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-liveTvSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-liveTvSwift/Pods-liveTvSwift.debug.xcconfig"; sourceTree = "<group>"; };
-		AFAE7FE4027D2AEB90BD8281 /* libPods-LiveSportsTVHD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LiveSportsTVHD.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5B5C0DA606A5892C868E185 /* Pods_LiveSportsTVHD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LiveSportsTVHD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB0F510B20B4ADF4003BAD68 /* iTunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iTunesArtwork@2x"; sourceTree = "<group>"; };
 		FB0F510C20B4ADF6003BAD68 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		FB2FE2D620A0301800582A40 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 				FBAD685120BD6999009B46E3 /* Chartboost.framework in Frameworks */,
 				FBDEFC26209EDE32003E8C6B /* SnapKit.framework in Frameworks */,
 				FBDEFC24209ED942003E8C6B /* NVActivityIndicatorViewAppExtension.framework in Frameworks */,
-				ACB678A0A1255FC0A2FCB664 /* libPods-LiveSportsTVHD.a in Frameworks */,
+				8D64E8C061AD6646E536061C /* Pods_LiveSportsTVHD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,7 +360,7 @@
 				FBDEFC21209ED942003E8C6B /* NVActivityIndicatorView.framework */,
 				FBDEFC22209ED942003E8C6B /* NVActivityIndicatorViewAppExtension.framework */,
 				FBDEFC1F209ED88D003E8C6B /* BMPlayer.framework */,
-				AFAE7FE4027D2AEB90BD8281 /* libPods-LiveSportsTVHD.a */,
+				B5B5C0DA606A5892C868E185 /* Pods_LiveSportsTVHD.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -377,6 +377,8 @@
 				FBB5DD4420920A9900CE51FE /* Frameworks */,
 				FBB5DD4520920A9900CE51FE /* Resources */,
 				FBDEFC27209EDFBF003E8C6B /* ShellScript */,
+				11BFCE8C1316013E7B1E5433 /* [CP] Embed Pods Frameworks */,
+				2DABDA188BFCE926A7F2AF60 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -503,6 +505,39 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		11BFCE8C1316013E7B1E5433 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LiveSportsTVHD/Pods-LiveSportsTVHD-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FAPanels/FAPanels.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FAPanels.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LiveSportsTVHD/Pods-LiveSportsTVHD-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2DABDA188BFCE926A7F2AF60 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LiveSportsTVHD/Pods-LiveSportsTVHD-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		41FCE7061F13DBC2BB802940 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
