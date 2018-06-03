@@ -13,7 +13,6 @@ import MessageUI
 class EventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var tableViewEvent: UITableView!
-    @IBOutlet weak var dateTime_lbl: UILabel!
     private let refreshControl = UIRefreshControl()
 
     @IBOutlet weak var tableViewEventHeightConstraint: NSLayoutConstraint!
@@ -27,10 +26,13 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
         fetchAppData()
 
-        let dateFormatterGet = DateFormatter()
-        dateFormatterGet.dateFormat = "d MMM, EEEE"
+        let menuBtn = UIBarButtonItem(image: UIImage(named: "menu"), style: .plain, target: self, action: #selector(openMenu))
+        self.navigationItem.leftBarButtonItem  = menuBtn
         
-        dateTime_lbl.text = dateFormatterGet.string(from: Date())
+        let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
+        self.navigationItem.rightBarButtonItem  = add
+
+        
         
         // Add Refresh Control to Table View
         if #available(iOS 10.0, *) {
@@ -56,12 +58,12 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Dispose of any resources that can be recreated.
     }
     
-    @objc private func refreshData(_ sender: Any) {
-        
-        fetchAppData()
+    @objc func openMenu ()
+    {
+        panel?.openLeft(animated: true)
     }
-    
-    @IBAction func requestAction(_ sender: Any) {
+    @objc func addTapped ()
+    {
         if MFMailComposeViewController.canSendMail() {
             let emailTitle = "Channel Addition Request"
             let messageBody = ""
@@ -76,7 +78,15 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
             print("Cannot send mail")
             // give feedback to the user
         }
+        
     }
+    
+    @objc private func refreshData(_ sender: Any) {
+        
+        fetchAppData()
+    }
+    
+
     // MARK: Netwrok Calling
     func fetchAppData()
     {

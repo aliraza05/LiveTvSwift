@@ -19,6 +19,11 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
+        let menuBtn = UIBarButtonItem(image: UIImage(named: "menu"), style: .plain, target: self, action: #selector(openMenu))
+        self.navigationItem.leftBarButtonItem  = menuBtn
+        
         fetchAppData()
 
         // Add Refresh Control to Table View
@@ -35,6 +40,11 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
         // Do any additional setup after loading the view, typically from a nib.
     }
 
+    @objc func openMenu ()
+    {
+        panel?.openLeft(animated: true)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if canShowAd

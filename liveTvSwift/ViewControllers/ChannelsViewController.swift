@@ -10,8 +10,9 @@ import UIKit
 import BMPlayer
 import NVActivityIndicatorView
 import AVFoundation
+import MessageUI
 
-class ChannelsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ChannelsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var tableView_channel: UITableView!
     @IBOutlet weak var channelName_lbl: UILabel!
@@ -124,6 +125,50 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
         setupPlayerResource(channel: channel)
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    //If you want to change title
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "Report"
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            // you might want to delete the item at the array first before calling this function
+            
+            let channel: Channel = tableDataArray[indexPath.row]
+
+            mailAction(subject: channel.name)
+            
+        }
+    }
+    
+    
+    func mailAction(subject : String)
+    {
+        if MFMailComposeViewController.canSendMail() {
+            let emailTitle = "Channel Error Reporting:" + subject
+            let messageBody = ""
+            let toRecipents = [FEEDBACK_EMAIL]
+            let mc: MFMailComposeViewController = MFMailComposeViewController()
+            mc.mailComposeDelegate = self
+            mc.setSubject(emailTitle)
+            mc.setMessageBody(messageBody, isHTML: false)
+            mc.setToRecipients(toRecipents)
+            self.present(mc, animated: true, completion: nil)
+        }else {
+            print("Cannot send mail")
+            // give feedback to the user
+        }
+    }
+    
+    // MARK: - MFMailComposeViewControllerDelegate
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
+    }
     // MARK:- BMPlayer Functions
     /**
      prepare playerView

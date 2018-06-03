@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMobileAds
+import FAPanels
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,7 +23,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
+        let leftMenuVC: LeftMenuViewController = mainStoryboard.instantiateViewController(withIdentifier: "LeftMenuVC") as! LeftMenuViewController
+        
+        
+        let centerVC: UINavigationController = mainStoryboard.instantiateViewController(withIdentifier: "eventScreen") as! UINavigationController
+        
+        leftMenuVC.eventController = centerVC
+        
+        let rootController = FAPanelController()
+        window?.rootViewController = rootController
+    
+        rootController.leftPanelPosition = .front
+
+        rootController.configs.leftPanelWidth = 280
+        rootController.configs.bounceOnRightPanelOpen = false
+        
+        rootController.configs.panFromEdge = false
+        rootController.configs.minEdgeForLeftPanel  = 70
+        rootController.configs.minEdgeForRightPanel = 70
+        
+        window?.rootViewController = rootController.center(centerVC).left(leftMenuVC)
+
+
         checkForAddBlocker()
         _ = Timer.scheduledTimer(timeInterval: ADD_BLOCKER_CHECKING_TIME, target: self, selector: #selector(self.checkForAddBlocker), userInfo: nil, repeats: true)
         GADMobileAds.configure(withApplicationID: ADMOB_APP_ID)
@@ -58,6 +82,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     @objc func checkForAddBlocker() {
         // Something cool
+        
+        //testing
+
         let isAddsBlocking = AddBlockerDetector.isAddBlockerRunning()
 
         if isAddsBlocking

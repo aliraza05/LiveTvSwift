@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8D64E8C061AD6646E536061C /* Pods_LiveSportsTVHD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B5C0DA606A5892C868E185 /* Pods_LiveSportsTVHD.framework */; };
+		FB1FDD4120C458D900841047 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FDD4020C458D900841047 /* NewsViewController.swift */; };
+		FB1FDD4320C467E800841047 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FDD4220C467E800841047 /* NewsCell.swift */; };
 		FB2FE2D720A0301900582A40 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB2FE2D620A0301800582A40 /* Kingfisher.framework */; };
 		FB38459420932CE900123B27 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB38459220932CE900123B27 /* EventViewController.swift */; };
 		FB38459520932CE900123B27 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB38459320932CE900123B27 /* CategoriesViewController.swift */; };
@@ -16,6 +18,8 @@
 		FB639905209C99830075BA19 /* ChannelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB639903209C99830075BA19 /* ChannelTableViewCell.xib */; };
 		FB6866A920AC6D6C00D330D4 /* AdsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6866A820AC6D6C00D330D4 /* AdsManager.swift */; };
 		FB6866AD20AF241B00D330D4 /* Ads.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6866AC20AF241B00D330D4 /* Ads.swift */; };
+		FB899B0720C2C57D009A901B /* LeftMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB899B0620C2C57D009A901B /* LeftMenuCell.swift */; };
+		FB899B0920C2C59E009A901B /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB899B0820C2C59E009A901B /* LeftMenuViewController.swift */; };
 		FB8B231120A1730F001FC991 /* AppBlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8B230F20A1730F001FC991 /* AppBlockViewController.swift */; };
 		FB8B231220A1730F001FC991 /* AppBlockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB8B231020A1730F001FC991 /* AppBlockViewController.xib */; };
 		FB914D32209B1DAF008F47EA /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB914D31209B1DAF008F47EA /* APIManager.swift */; };
@@ -79,6 +83,8 @@
 		B5B5C0DA606A5892C868E185 /* Pods_LiveSportsTVHD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LiveSportsTVHD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB0F510B20B4ADF4003BAD68 /* iTunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iTunesArtwork@2x"; sourceTree = "<group>"; };
 		FB0F510C20B4ADF6003BAD68 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
+		FB1FDD4020C458D900841047 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		FB1FDD4220C467E800841047 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		FB2FE2D620A0301800582A40 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		FB38459220932CE900123B27 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		FB38459320932CE900123B27 /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +93,8 @@
 		FB639903209C99830075BA19 /* ChannelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelTableViewCell.xib; sourceTree = "<group>"; };
 		FB6866A820AC6D6C00D330D4 /* AdsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdsManager.swift; sourceTree = "<group>"; };
 		FB6866AC20AF241B00D330D4 /* Ads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ads.swift; sourceTree = "<group>"; };
+		FB899B0620C2C57D009A901B /* LeftMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuCell.swift; sourceTree = "<group>"; };
+		FB899B0820C2C59E009A901B /* LeftMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
 		FB8B230F20A1730F001FC991 /* AppBlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBlockViewController.swift; sourceTree = "<group>"; };
 		FB8B231020A1730F001FC991 /* AppBlockViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppBlockViewController.xib; sourceTree = "<group>"; };
 		FB914D31209B1DAF008F47EA /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -195,6 +203,8 @@
 				FBDEFC18209EC547003E8C6B /* MoreViewController.swift */,
 				FB8B230F20A1730F001FC991 /* AppBlockViewController.swift */,
 				FB8B231020A1730F001FC991 /* AppBlockViewController.xib */,
+				FB899B0820C2C59E009A901B /* LeftMenuViewController.swift */,
+				FB1FDD4020C458D900841047 /* NewsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -253,6 +263,8 @@
 				FB914D3D209B2BB7008F47EA /* CategoriesTableViewCell.xib */,
 				FB639902209C99830075BA19 /* ChannelTableViewCell.swift */,
 				FB639903209C99830075BA19 /* ChannelTableViewCell.xib */,
+				FB899B0620C2C57D009A901B /* LeftMenuCell.swift */,
+				FB1FDD4220C467E800841047 /* NewsCell.swift */,
 			);
 			path = CustomTableCells;
 			sourceTree = "<group>";
@@ -592,6 +604,7 @@
 				FBBBDEE2209C409D00CAEAA8 /* Parser.swift in Sources */,
 				FB914D3A209B2636008F47EA /* EventTableViewCell.swift in Sources */,
 				FB914D32209B1DAF008F47EA /* APIManager.swift in Sources */,
+				FB899B0720C2C57D009A901B /* LeftMenuCell.swift in Sources */,
 				FBAD25EC20A41E7E002351C5 /* AddBlockerDetector.m in Sources */,
 				FBDEFC19209EC547003E8C6B /* MoreViewController.swift in Sources */,
 				FB38459520932CE900123B27 /* CategoriesViewController.swift in Sources */,
@@ -599,13 +612,16 @@
 				FB914D36209B1F48008F47EA /* SwiftyJSON.swift in Sources */,
 				FB8B231120A1730F001FC991 /* AppBlockViewController.swift in Sources */,
 				FB639901209C97FB0075BA19 /* ChannelsViewController.swift in Sources */,
+				FB1FDD4120C458D900841047 /* NewsViewController.swift in Sources */,
 				FB914D3E209B2BB7008F47EA /* CategoriesTableViewCell.swift in Sources */,
 				FB914D44209B3696008F47EA /* Channel.swift in Sources */,
 				FBC9491320B0B28100925486 /* BMPlayerCustomControlView.swift in Sources */,
+				FB899B0920C2C59E009A901B /* LeftMenuViewController.swift in Sources */,
 				FB38459420932CE900123B27 /* EventViewController.swift in Sources */,
 				FB914D47209B522D008F47EA /* SplashViewController.swift in Sources */,
 				FBBBDEE4209C41CC00CAEAA8 /* Constants.swift in Sources */,
 				FB639904209C99830075BA19 /* ChannelTableViewCell.swift in Sources */,
+				FB1FDD4320C467E800841047 /* NewsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
