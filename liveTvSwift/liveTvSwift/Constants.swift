@@ -9,9 +9,13 @@
 import Foundation
 import UIKit
 
-let APP_ID                       = 13
+let APP_ID                       = 6
 let BASE_URL                     = "https://www.nospacedidlove.com/api/applications/details"
-let AUTH_TOKEN                   = "70ee5a595d1779b7b98265a7129e5c75d6f55911"
+let AUTH_TOKEN                   = "6d0c0cdc967caa3731516a7b6b6ebd33c64c92ac"
+
+
+//let APP_ID                       = 13
+//let AUTH_TOKEN                   = "70ee5a595d1779b7b98265a7129e5c75d6f55911"
 
 //More View Controller Constants
 

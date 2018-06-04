@@ -77,7 +77,7 @@ class NewsViewController: UIViewController,UICollectionViewDataSource,UIScrollVi
     // MARK: Data Parsing
     func parseNetworkDataAndUpdateUI(json: JSON)
     {
-        newsList = getEventsFromRespns(json: json)
+        newsList = getNewsFromRespns(json: json)
         
         if newsList.count > 0
         {

@@ -39,18 +39,39 @@ func getEventsFromRespns(json: JSON) -> [Event]
             }
         }
         
-        if live && tempChannels.count > 0
+        if live && tempChannels.count > 0 && status != "NEWS"
         {
             tempChannels.sort(by: { $0.priority < $1.priority })
 
             eventsArray.append(Event(name: name, live: live, status: status, image_url: image_url,thubnail: thumbnail_image, priority: priority, channels: tempChannels))
         }
     }
-    
     eventsArray.sort(by: { $0.priority < $1.priority })
-
     return eventsArray;
 }
+
+func getNewsFromRespns(json: JSON) -> [Event]
+{
+    var newsArray: [Event] = []
+    
+    for result in json["events"].arrayValue
+    {
+        let name = result["name"].stringValue
+        let live = result["live"].boolValue
+        let status = result["status"].stringValue
+        let image_url = result["image_url"].stringValue
+        let thumbnail_image = result["thumbnail_image"].stringValue
+        let priority = result["priority"].intValue
+        
+        if live && status == "NEWS"
+        {
+            newsArray.append(Event(name: name, live: live, status: status, image_url: image_url,thubnail: thumbnail_image, priority: priority, channels: []))
+        }
+    }
+    newsArray.sort(by: { $0.priority < $1.priority })
+    return newsArray;
+}
+
 func getCategoriesFromRespns(json: JSON) -> [Event]
 {
     var eventsArray: [Event] = []
