@@ -170,24 +170,45 @@ class AdsManager:NSObject,GADBannerViewDelegate,GADInterstitialDelegate
     func addBannerViewToViewAtBottom(_ bannerView: GADBannerView, _ vie:UIView) {
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         vie.addSubview(bannerView)
-        vie.addConstraints(
-            [NSLayoutConstraint(item: bannerView,
-                                attribute: .bottom,
-                                relatedBy: .equal,
-                                toItem: vie.safeAreaLayoutGuide,
-                                attribute: .bottom,
-                                multiplier: 1,
-                                constant: 0),
-             NSLayoutConstraint(item: bannerView,
-                                attribute: .centerX,
-                                relatedBy: .equal,
-                                toItem: vie,
-                                attribute: .centerX,
-                                multiplier: 1,
-                                constant: 0)
-            ])
         
-        bannerView.load(GADRequest())
+        
+//        bannerView.snp.makeConstraints { (make) in
+//            make.height.equalTo(50)
+//            make.left.equalToSuperview()
+//            make.right.equalToSuperview()
+//            make.bottom.equalToSuperview()
+//        }
+        
+        bannerView.snp.makeConstraints { (make) in
+            make.height.equalTo(50)
+            make.width.equalTo(320)
+            make.right.equalToSuperview()
+            make.bottom.equalToSuperview()
+
+        }
+        
+//        vie.addConstraints(
+//            [NSLayoutConstraint(item: bannerView,
+//                                attribute: .bottom,
+//                                relatedBy: .equal,
+//                                toItem: vie.safeAreaLayoutGuide,
+//                                attribute: .bottom,
+//                                multiplier: 1,
+//                                constant: 0),
+//             NSLayoutConstraint(item: bannerView,
+//                                attribute: .centerX,
+//                                relatedBy: .equal,
+//                                toItem: vie,
+//                                attribute: .centerX,
+//                                multiplier: 1,
+//                                constant: 0)
+//            ])
+        
+        let request = GADRequest()
+//        request.testDevices = [ "Simulator" ]
+        
+        bannerView.load(request)
+        
         bannerView.delegate = self
         bannerView.rootViewController = window.rootViewController
     }

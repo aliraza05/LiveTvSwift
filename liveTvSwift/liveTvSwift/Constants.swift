@@ -30,7 +30,11 @@ let APP_DISABLED_MESSAGE         = "Server communication error we will get back 
 let ADD_BLOCKER_RUNNING_MSG      = "You are running add blocker please stop it in order to use our app."
 
 let ADMOB_APP_ID                 = "ca-app-pub-2498422838695550~2955082663"
-let ADMOB_BANNER_ID              = "ca-app-pub-2498422838695550/7904157013"
+//let ADMOB_BANNER_ID              = "ca-app-pub-2498422838695550/7904157013"
+
+//Test
+let ADMOB_BANNER_ID              = "ca-app-pub-3940256099942544/2934735716"
+
 let ADMOB_INTERSTITIAL_ID        = "ca-app-pub-2498422838695550/2871198479"
 let ADMOB_VIDEOADD_ID            = "ca-app-pub-2498422838695550/5520677421"
 

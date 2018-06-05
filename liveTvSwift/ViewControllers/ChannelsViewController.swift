@@ -239,7 +239,7 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
         player.setVideo(resource: asset)
         AdsManager.sharedInstance.showInterstatial(nil, location: "beforevideo")
 //        AdsManager.sharedInstance.showBanner(player,location: "location2top")
-//        AdsManager.sharedInstance.showBanner(player,location: "location2bottom")
+        AdsManager.sharedInstance.showBanner(player,location: "location2bottom")
     }
     
     func setupPlayerManager() {
