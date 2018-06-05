@@ -152,7 +152,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EtJ-fG-ByU">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="135" width="375" height="532"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="leftmenucell" rowHeight="50" id="etH-6z-3QP" customClass="LeftMenuCell" customModule="Live_Sports_TV_HD" customModuleProvider="target">
@@ -201,12 +201,21 @@
                                     <outlet property="delegate" destination="Q7h-qC-81w" id="2yy-O5-WMk"/>
                                 </connections>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sideMenuTopLogo" translatesAutoresizingMaskIntoConstraints="NO" id="lNj-ig-EQQ">
+                                <rect key="frame" x="16" y="35" width="200" height="87"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="87" id="1kS-YY-fQX"/>
+                                    <constraint firstAttribute="width" constant="200" id="yJw-LF-KwG"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="EtJ-fG-ByU" firstAttribute="leading" secondItem="Wvu-MU-0Qg" secondAttribute="leading" id="Ohj-wT-DnU"/>
-                            <constraint firstItem="EtJ-fG-ByU" firstAttribute="top" secondItem="fHl-TZ-vGM" secondAttribute="top" id="PeL-f7-jAW"/>
+                            <constraint firstItem="EtJ-fG-ByU" firstAttribute="top" secondItem="Wvu-MU-0Qg" secondAttribute="top" constant="115" id="PeL-f7-jAW"/>
+                            <constraint firstItem="lNj-ig-EQQ" firstAttribute="top" secondItem="Wvu-MU-0Qg" secondAttribute="top" constant="15" id="QJ1-ml-ntR"/>
                             <constraint firstItem="EtJ-fG-ByU" firstAttribute="bottom" secondItem="Wvu-MU-0Qg" secondAttribute="bottom" id="Rbx-lN-Leg"/>
+                            <constraint firstItem="lNj-ig-EQQ" firstAttribute="leading" secondItem="Wvu-MU-0Qg" secondAttribute="leading" constant="16" id="iRS-Xq-F9e"/>
                             <constraint firstItem="EtJ-fG-ByU" firstAttribute="trailing" secondItem="Wvu-MU-0Qg" secondAttribute="trailing" id="zfe-Xu-L6b"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Wvu-MU-0Qg"/>
@@ -403,6 +412,7 @@
     </scenes>
     <resources>
         <image name="file" width="25" height="27"/>
+        <image name="sideMenuTopLogo" width="331" height="144"/>
         <image name="television" width="25" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
