@@ -674,7 +674,7 @@ public struct ToastStyle {
     public var activitySize = CGSize(width: 100.0, height: 100.0)
     
     /**
-     The fade in/out animation duration. Default is 0.2.
+     The fade in/out animation duration. Default is 0.2.#imageLiteral(resourceName: "look.png")
      */
     public var fadeDuration: TimeInterval = 0.2
     
@@ -687,7 +687,7 @@ public struct ToastStyle {
      Activity background color. Default is `.black` at 80% opacity.
      */
 //    public var activityBackgroundColor: UIColor = UIColor.black.withAlphaComponent(0.8)
-    public var activityBackgroundColor: UIColor = UIColor(displayP3Red: 0.0196, green: 0.6039, blue: 0.8196, alpha: 0.8)
+    public var activityBackgroundColor: UIColor = UIColor(displayP3Red: 1, green: 0.580392, blue: 0.188235, alpha: 0.8)
 
 }
 

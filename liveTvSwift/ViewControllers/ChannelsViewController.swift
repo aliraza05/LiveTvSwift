@@ -16,6 +16,8 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet weak var tableView_channel: UITableView!
     @IBOutlet weak var channelName_lbl: UILabel!
+    @IBOutlet weak var tipView: UIView!
+    
     
     let cellReuseIdentifier = "ChannelTableViewCell"
     var tableDataArray : [Channel] = []
@@ -52,6 +54,9 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
         AdsManager.sharedInstance.showInterstatial(nil, location: "middle")
     }
 
+    @IBAction func tipHideAction(_ sender: Any) {
+        tipView.isHidden = true
+    }
     @objc func applicationWillEnterForeground() {
         if player != nil
         {

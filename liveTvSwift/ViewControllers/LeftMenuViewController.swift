@@ -22,7 +22,7 @@ class LeftMenuViewController: UIViewController,UITableViewDelegate, UITableViewD
 
     var tableDataArray: [[String:String]] = []
 
-    var menu1 = [ "title": "Event", "image": "file",]
+    var menu1 = [ "title": "Event", "image": "file_blue",]
     var menu2 = [ "title": "Category", "image": "television",]
     var menu3 = [ "title": "News", "image": "file_blue",]
     var menu4 = [ "title": "Mail / Contact Us", "image": "mail",]
