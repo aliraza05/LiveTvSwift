@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8A9A56B82EBD0100C56529F0E001B073"
+               BlueprintIdentifier = "BC4613087AABF333901C0149A43AF63A"
                BuildableName = "Pods_LiveSportsTVHD.framework"
                BlueprintName = "Pods-LiveSportsTVHD"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -26,6 +26,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -36,6 +37,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -45,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8A9A56B82EBD0100C56529F0E001B073"
+            BlueprintIdentifier = "BC4613087AABF333901C0149A43AF63A"
             BuildableName = "Pods_LiveSportsTVHD.framework"
             BlueprintName = "Pods-LiveSportsTVHD"
             ReferencedContainer = "container:Pods.xcodeproj">

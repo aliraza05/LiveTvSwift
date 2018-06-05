@@ -10,6 +10,7 @@
 		8D64E8C061AD6646E536061C /* Pods_LiveSportsTVHD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B5C0DA606A5892C868E185 /* Pods_LiveSportsTVHD.framework */; };
 		FB1FDD4120C458D900841047 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FDD4020C458D900841047 /* NewsViewController.swift */; };
 		FB1FDD4320C467E800841047 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FDD4220C467E800841047 /* NewsCell.swift */; };
+		FB2F876920C6A10500FE2958 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB2F876820C6A07200FE2958 /* GoogleService-Info.plist */; };
 		FB2FE2D720A0301900582A40 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB2FE2D620A0301800582A40 /* Kingfisher.framework */; };
 		FB38459420932CE900123B27 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB38459220932CE900123B27 /* EventViewController.swift */; };
 		FB38459520932CE900123B27 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB38459320932CE900123B27 /* CategoriesViewController.swift */; };
@@ -85,6 +86,8 @@
 		FB0F510C20B4ADF6003BAD68 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		FB1FDD4020C458D900841047 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		FB1FDD4220C467E800841047 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		FB2F876820C6A07200FE2958 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FB2F876A20C6A40600FE2958 /* Live Sports TV HD.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Live Sports TV HD.entitlements"; sourceTree = "<group>"; };
 		FB2FE2D620A0301800582A40 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		FB38459220932CE900123B27 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		FB38459320932CE900123B27 /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
@@ -292,6 +295,7 @@
 		FBB5DD3E20920A9900CE51FE = {
 			isa = PBXGroup;
 			children = (
+				FB2F876A20C6A40600FE2958 /* Live Sports TV HD.entitlements */,
 				FB6866A720AC6D6C00D330D4 /* AdsNetwork */,
 				FB914D40209B337A008F47EA /* DTOS */,
 				FB914D37209B260F008F47EA /* CustomTableCells */,
@@ -328,6 +332,7 @@
 				FBB5DD5320920A9900CE51FE /* Assets.xcassets */,
 				FBB5DD5520920A9900CE51FE /* LaunchScreen.storyboard */,
 				FBB5DD5820920A9900CE51FE /* Info.plist */,
+				FB2F876820C6A07200FE2958 /* GoogleService-Info.plist */,
 			);
 			path = liveTvSwift;
 			sourceTree = "<group>";
@@ -451,6 +456,11 @@
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					FBB5DD5C20920A9900CE51FE = {
 						CreatedOnToolsVersion = 9.0;
@@ -491,6 +501,7 @@
 			files = (
 				FB914D3B209B2636008F47EA /* EventTableViewCell.xib in Resources */,
 				FB914D48209B522D008F47EA /* SplashViewController.xib in Resources */,
+				FB2F876920C6A10500FE2958 /* GoogleService-Info.plist in Resources */,
 				FBB5DD5720920A9900CE51FE /* LaunchScreen.storyboard in Resources */,
 				FB914D3F209B2BB7008F47EA /* CategoriesTableViewCell.xib in Resources */,
 				FBB5DD5420920A9900CE51FE /* Assets.xcassets in Resources */,
@@ -525,10 +536,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LiveSportsTVHD/Pods-LiveSportsTVHD-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FAPanels/FAPanels.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FAPanels.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -791,16 +808,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Live Sports TV HD.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3RF6H6XXSY;
+				DEVELOPMENT_TEAM = 978V5E4392;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/AdsNetwork",
 				);
 				INFOPLIST_FILE = liveTvSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lineupsports.live.sports.tv;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wc.live.football.tv;
 				PRODUCT_NAME = "Live Sports TV HD";
 				SWIFT_OBJC_BRIDGING_HEADER = "ThirdParty/AddBlockerDetector/liveTvSwift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -815,16 +834,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Live Sports TV HD.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3RF6H6XXSY;
+				DEVELOPMENT_TEAM = 978V5E4392;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/AdsNetwork",
 				);
 				INFOPLIST_FILE = liveTvSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lineupsports.live.sports.tv;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wc.live.football.tv;
 				PRODUCT_NAME = "Live Sports TV HD";
 				SWIFT_OBJC_BRIDGING_HEADER = "ThirdParty/AddBlockerDetector/liveTvSwift-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
