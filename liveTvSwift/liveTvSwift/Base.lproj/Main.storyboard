@@ -256,7 +256,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="603"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v1j-fi-fSk">
-                                                    <rect key="frame" x="20" y="450" width="334" height="41"/>
+                                                    <rect key="frame" x="20" y="281" width="334" height="41"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello guyes i am teeling you the great news that world cup of cricket is coming soon." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J7M-Yi-oKj">
                                                             <rect key="frame" x="10" y="10" width="314" height="21"/>
@@ -285,8 +285,8 @@
                                             <constraint firstItem="cm3-pI-LKt" firstAttribute="top" secondItem="d22-Vb-wbr" secondAttribute="top" id="JEc-SF-U8w"/>
                                             <constraint firstItem="cm3-pI-LKt" firstAttribute="leading" secondItem="d22-Vb-wbr" secondAttribute="leading" id="MLX-Ky-jwd"/>
                                             <constraint firstAttribute="bottom" secondItem="cm3-pI-LKt" secondAttribute="bottom" id="Ufi-gq-bRQ"/>
+                                            <constraint firstItem="v1j-fi-fSk" firstAttribute="centerY" secondItem="d22-Vb-wbr" secondAttribute="centerY" id="fLd-2q-TL7"/>
                                             <constraint firstAttribute="trailing" secondItem="cm3-pI-LKt" secondAttribute="trailing" id="koS-X6-jrT"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="v1j-fi-fSk" secondAttribute="bottomMargin" constant="120" id="tnc-sf-Mfd"/>
                                             <constraint firstItem="v1j-fi-fSk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="d22-Vb-wbr" secondAttribute="leadingMargin" constant="20" id="wph-6A-vRq"/>
                                         </constraints>
                                         <connections>
