@@ -143,9 +143,9 @@ class NewsViewController: UIViewController,UICollectionViewDataSource,UIScrollVi
         {
             cell.newsBg_imgview.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "placeholderSmal"))
         }
-//        cell.newsTitle_lbl.text = event.name;
+        cell.newsTitle_lbl.text = event.name;
         
-        cell.backgroundColor = UIColor.black
+//        cell.backgroundColor = UIColor.black
         // Configure the cell
         return cell
     }

@@ -45,7 +45,7 @@ class CategoriesTableViewCell: UITableViewCell {
         }
         if let thumburl = URL(string: event.thumbnail_image)
         {
-            categoryImageView.kf.setImage(with: thumburl, completionHandler: {
+            thumbnail_imgV.kf.setImage(with: thumburl, completionHandler: {
                 (image, error, cacheType, imageUrl) in
                 
                 self.setNeedsLayout()

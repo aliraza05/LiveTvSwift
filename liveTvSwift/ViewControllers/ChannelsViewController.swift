@@ -51,11 +51,24 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
                                                name: NSNotification.Name.UIApplicationWillEnterForeground,
                                                object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(ChannelsViewController.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        
         AdsManager.sharedInstance.showInterstatial(nil, location: "middle")
+        
+        if !(UserDefaults.standard.object(forKey: "tipshown") != nil)
+        {
+            tipView.isHidden = false
+        }
+        else
+        {
+            tipView.isHidden = true
+        }
     }
 
     @IBAction func tipHideAction(_ sender: Any) {
         tipView.isHidden = true
+        UserDefaults.standard.set(true, forKey: "tipshown")
+        UserDefaults.standard.synchronize()
     }
     @objc func applicationWillEnterForeground() {
         if player != nil
@@ -72,7 +85,11 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
-    
+    @objc func rotated()
+    {
+        let currentOrientation = UIDevice.current.orientation
+        AdsManager.sharedInstance.updateBannerPosition(orientation: currentOrientation)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -238,7 +255,7 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
                                      name: channel.name)
         player.setVideo(resource: asset)
         AdsManager.sharedInstance.showInterstatial(nil, location: "beforevideo")
-//        AdsManager.sharedInstance.showBanner(player,location: "location2top")
+        AdsManager.sharedInstance.showBanner(player,location: "location2top")
         AdsManager.sharedInstance.showBanner(player,location: "location2bottom")
     }
     

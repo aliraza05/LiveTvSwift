@@ -19,6 +19,8 @@ class AdsManager:NSObject,GADBannerViewDelegate,GADInterstitialDelegate
     var interstitial: GADInterstitial!
     var adsData: NSMutableArray!
     
+    var isTopBannerShowing : Bool = false
+    
     func initAds()
     {
         window = APP_DELEGATE().window
@@ -139,6 +141,27 @@ class AdsManager:NSObject,GADBannerViewDelegate,GADInterstitialDelegate
         print("interstitialWillLeaveApplication")
     }
     //Banner related functions
+    
+    func updateBannerPosition(orientation : UIDeviceOrientation)
+    {
+        if isTopBannerShowing
+        {
+            if orientation.isLandscape
+            {
+                bannerView.snp.updateConstraints { (make) in
+                    
+                    make.top.equalToSuperview().offset(0)
+                }
+            }else if orientation.isPortrait
+            {
+                bannerView.snp.updateConstraints { (make) in
+                    
+                    make.top.equalToSuperview().offset(64)
+                }
+            }
+        }
+    }
+    
     func showBanner(_ vi:UIView!,location:String)
     {
         for adsObj in adsData
@@ -168,70 +191,43 @@ class AdsManager:NSObject,GADBannerViewDelegate,GADInterstitialDelegate
     }
     
     func addBannerViewToViewAtBottom(_ bannerView: GADBannerView, _ vie:UIView) {
+        
+        isTopBannerShowing = false
+
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         vie.addSubview(bannerView)
-        
-        
-//        bannerView.snp.makeConstraints { (make) in
-//            make.height.equalTo(50)
-//            make.left.equalToSuperview()
-//            make.right.equalToSuperview()
-//            make.bottom.equalToSuperview()
-//        }
-        
+
         bannerView.snp.makeConstraints { (make) in
             make.height.equalTo(50)
             make.width.equalTo(320)
             make.right.equalToSuperview()
             make.bottom.equalToSuperview()
-
         }
         
-//        vie.addConstraints(
-//            [NSLayoutConstraint(item: bannerView,
-//                                attribute: .bottom,
-//                                relatedBy: .equal,
-//                                toItem: vie.safeAreaLayoutGuide,
-//                                attribute: .bottom,
-//                                multiplier: 1,
-//                                constant: 0),
-//             NSLayoutConstraint(item: bannerView,
-//                                attribute: .centerX,
-//                                relatedBy: .equal,
-//                                toItem: vie,
-//                                attribute: .centerX,
-//                                multiplier: 1,
-//                                constant: 0)
-//            ])
-        
         let request = GADRequest()
-//        request.testDevices = [ "Simulator" ]
-        
-        bannerView.load(request)
-        
         bannerView.delegate = self
         bannerView.rootViewController = window.rootViewController
+        bannerView.load(request)
     }
     
     func addBannerViewToViewAtTop(_ bannerView: GADBannerView, _ vie:UIView) {
+        
+        isTopBannerShowing = true
+        
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         vie.addSubview(bannerView)
-        vie.addConstraints(
-            [NSLayoutConstraint(item: bannerView,
-                                attribute: .bottom,
-                                relatedBy: .equal,
-                                toItem: vie.safeAreaLayoutGuide,
-                                attribute: .top,
-                                multiplier: 1,
-                                constant: 0),
-             NSLayoutConstraint(item: bannerView,
-                                attribute: .centerX,
-                                relatedBy: .equal,
-                                toItem: vie,
-                                attribute: .centerX,
-                                multiplier: 1,
-                                constant: 0)
-            ])
+        
+        bannerView.snp.makeConstraints { (make) in
+            make.height.equalTo(50)
+            make.width.equalTo(320)
+            make.right.equalToSuperview()
+            make.top.equalToSuperview().offset(64)
+        }
+        
+        let request = GADRequest()
+        bannerView.delegate = self
+        bannerView.rootViewController = window.rootViewController
+        bannerView.load(request)
     }
     
 
