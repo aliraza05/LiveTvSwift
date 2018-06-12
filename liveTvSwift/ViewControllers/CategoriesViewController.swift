@@ -33,7 +33,7 @@ class CategoriesViewController: UIViewController, UITableViewDelegate, UITableVi
             categoryTableView.addSubview(refreshControl)
         }
         refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
-        refreshControl.tintColor = UIColor(displayP3Red: 0.0196, green: 0.6039, blue: 0.8196, alpha: 1.0)
+        refreshControl.tintColor = UIColor(displayP3Red: 1, green: 0.580392, blue: 0.188235, alpha: 0.8)
         
         categoryTableView.register(UINib(nibName: "CategoriesTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
 
