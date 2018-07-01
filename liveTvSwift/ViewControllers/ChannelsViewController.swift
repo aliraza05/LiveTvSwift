@@ -251,9 +251,32 @@ class ChannelsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func setupPlayerResource(channel: Channel) {
      
-        let asset = BMPlayerResource(url: URL(string: channel.url)!,
+        let string = channel.url.components(separatedBy: "/")
+        let fname = string[string.count - 3]
+        let lname = string[string.count - 2]
+        let sname = fname+"/"+lname
+        
+        var ip:String!
+        let fs = sname+"-"+"-Channel,Postion"
+        var md:String!
+        md = MD5(fs)
+        
+        
+        let seconds: TimeInterval = NSDate().timeIntervalSince1970
+        let  cuttDate:Double =  seconds*1;
+        
+        let timeStamp2:String = String(format:"%f", cuttDate)
+        
+        md = md + ":" + timeStamp2
+        
+        md = md.toBase64()
+        md = "?token="+md
+        md = channel.url + md
+        let asset = BMPlayerResource(url: URL(string: md)!,
                                      name: channel.name)
         player.setVideo(resource: asset)
+        
+        
         AdsManager.sharedInstance.showInterstatial(nil, location: "beforevideo")
         AdsManager.sharedInstance.showBanner(player,location: "location2top")
         AdsManager.sharedInstance.showBanner(player,location: "location2bottom")
@@ -307,6 +330,42 @@ extension ChannelsViewController: BMPlayerDelegate {
     // Call back when the video loaded duration changed
     func bmPlayer(player: BMPlayer, loadedTimeDidChange loadedDuration: TimeInterval, totalDuration: TimeInterval) {
                 print("| BMPlayerDelegate | loadedTimeDidChange | \(loadedDuration) of \(totalDuration)")
+    }
+}
+
+//other methods
+func MD5(_ string: String) -> String? {
+    let length = Int(CC_MD5_DIGEST_LENGTH)
+    var digest = [UInt8](repeating: 0, count: length)
+    
+    if let d = string.data(using: String.Encoding.utf8) {
+        _ = d.withUnsafeBytes { (body: UnsafePointer<UInt8>) in
+            CC_MD5(body, CC_LONG(d.count), &digest)
+        }
+    }
+    
+    return (0..<length).reduce("") {
+        $0 + String(format: "%02x", digest[$1])
+    }
+}
+
+
+extension String {
+    
+    func fromBase64() -> String? {
+        guard let data = Data(base64Encoded: self, options: Data.Base64DecodingOptions(rawValue: 0)) else {
+            return nil
+        }
+        
+        return String(data: data as Data, encoding: String.Encoding.utf8)
+    }
+    
+    func toBase64() -> String? {
+        guard let data = self.data(using: String.Encoding.utf8) else {
+            return nil
+        }
+        
+        return data.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0))
     }
 }
 

@@ -121,7 +121,7 @@
 		FBAD685920BD6A4B009B46E3 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		FBAD685B20BD6A55009B46E3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		FBAD685D20BD6A60009B46E3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		FBB5DD4720920A9900CE51FE /* Live Sports TV HD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Live Sports TV HD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBB5DD4720920A9900CE51FE /* Live Sports HD TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Live Sports HD TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB5DD4A20920A9900CE51FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBB5DD5120920A9900CE51FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FBB5DD5320920A9900CE51FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -314,7 +314,7 @@
 		FBB5DD4820920A9900CE51FE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FBB5DD4720920A9900CE51FE /* Live Sports TV HD.app */,
+				FBB5DD4720920A9900CE51FE /* Live Sports HD TV.app */,
 				FBB5DD5D20920A9900CE51FE /* LiveSportsTVHDTests.xctest */,
 				FBB5DD6820920A9900CE51FE /* LiveSportsTVHDUITests.xctest */,
 			);
@@ -403,7 +403,7 @@
 			);
 			name = LiveSportsTVHD;
 			productName = liveTvSwift;
-			productReference = FBB5DD4720920A9900CE51FE /* Live Sports TV HD.app */;
+			productReference = FBB5DD4720920A9900CE51FE /* Live Sports HD TV.app */;
 			productType = "com.apple.product-type.application";
 		};
 		FBB5DD5C20920A9900CE51FE /* LiveSportsTVHDTests */ = {
@@ -819,8 +819,8 @@
 				INFOPLIST_FILE = liveTvSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wc.live.football.tv;
-				PRODUCT_NAME = "Live Sports TV HD";
+				PRODUCT_BUNDLE_IDENTIFIER = com.live.sports.tv.hd;
+				PRODUCT_NAME = "Live Sports HD TV";
 				SWIFT_OBJC_BRIDGING_HEADER = "ThirdParty/AddBlockerDetector/liveTvSwift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -845,8 +845,8 @@
 				INFOPLIST_FILE = liveTvSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wc.live.football.tv;
-				PRODUCT_NAME = "Live Sports TV HD";
+				PRODUCT_BUNDLE_IDENTIFIER = com.live.sports.tv.hd;
+				PRODUCT_NAME = "Live Sports HD TV";
 				SWIFT_OBJC_BRIDGING_HEADER = "ThirdParty/AddBlockerDetector/liveTvSwift-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

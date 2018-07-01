@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-let APP_ID                       = 6
+let APP_ID                       = 19
 let BASE_URL                     = "https://www.nospacedidlove.com/api/applications/details"
-let AUTH_TOKEN                   = "6d0c0cdc967caa3731516a7b6b6ebd33c64c92ac"
+let AUTH_TOKEN                   = "dec60fbb594c693c52914f1d6a6ff2b1689ac45e"
 
 
 //let APP_ID                       = 13
@@ -21,25 +21,22 @@ let AUTH_TOKEN                   = "6d0c0cdc967caa3731516a7b6b6ebd33c64c92ac"
 
 let TERMS_URL                    = "http://onlinemobilestream.com/privacy-policy/"
 let MORE_APPS_URL                = "http://onlinemobilestream.com"
-let RATE_US_URL                  = "https://itunes.apple.com/us/app/live-sports-tv-hd/id1391202609?ls=1&mt=8"
+let RATE_US_URL                  = "https://itunes.apple.com/us/app/live-sports-hd-tv/id1352287989?ls=1&mt=8"
 
-let FEEDBACK_EMAIL               = "cricketcrazeios3@gmail.com"
+let FEEDBACK_EMAIL               = "cricketcrazeeng2@gmail.com"
 
 let ADD_BLOCKER_CHECKING_TIME    = 30.0
 let APP_DISABLED_MESSAGE         = "Server communication error we will get back to you soon"
 let ADD_BLOCKER_RUNNING_MSG      = "You are running add blocker please stop it in order to use our app."
 
-let ADMOB_APP_ID                 = "ca-app-pub-2498422838695550~2955082663"
-//let ADMOB_BANNER_ID              = "ca-app-pub-2498422838695550/7904157013"
+let ADMOB_APP_ID                 = "ca-app-pub-2498422838695550~1873752476"
+let ADMOB_BANNER_ID              = "ca-app-pub-2498422838695550/2664089961"
 
-//Test
-let ADMOB_BANNER_ID              = "ca-app-pub-3940256099942544/2934735716"
+let ADMOB_INTERSTITIAL_ID        = "ca-app-pub-2498422838695550/4302381367"
+let ADMOB_VIDEOADD_ID            = "ca-app-pub-2498422838695550/5645476525"
 
-let ADMOB_INTERSTITIAL_ID        = "ca-app-pub-2498422838695550/2871198479"
-let ADMOB_VIDEOADD_ID            = "ca-app-pub-2498422838695550/5520677421"
-
-let CHARTBOOST_ID                = "5b0d86b753eee8116c4d4a40"
-let CHARTBOOST_SIG               = "4d025e65130e48815d889f999741e006634f8eba"
+let CHARTBOOST_ID                = "5b1a641788ad040b76e234f7"
+let CHARTBOOST_SIG               = "6f9802c43fe99691a41d46921301a33469bec754"
 
 
 let STARTAPP_ID                  = "207757391"

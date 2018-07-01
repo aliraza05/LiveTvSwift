@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FBB5DD4620920A9900CE51FE"
-               BuildableName = "Live Sports TV HD.app"
+               BuildableName = "Live Sports HD TV.app"
                BlueprintName = "LiveSportsTVHD"
                ReferencedContainer = "container:LiveSportsTVHD.xcodeproj">
             </BuildableReference>
@@ -54,7 +54,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FBB5DD4620920A9900CE51FE"
-            BuildableName = "Live Sports TV HD.app"
+            BuildableName = "Live Sports HD TV.app"
             BlueprintName = "LiveSportsTVHD"
             ReferencedContainer = "container:LiveSportsTVHD.xcodeproj">
          </BuildableReference>
@@ -78,7 +78,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FBB5DD4620920A9900CE51FE"
-            BuildableName = "Live Sports TV HD.app"
+            BuildableName = "Live Sports HD TV.app"
             BlueprintName = "LiveSportsTVHD"
             ReferencedContainer = "container:LiveSportsTVHD.xcodeproj">
          </BuildableReference>
@@ -97,7 +97,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FBB5DD4620920A9900CE51FE"
-            BuildableName = "Live Sports TV HD.app"
+            BuildableName = "Live Sports HD TV.app"
             BlueprintName = "LiveSportsTVHD"
             ReferencedContainer = "container:LiveSportsTVHD.xcodeproj">
          </BuildableReference>
