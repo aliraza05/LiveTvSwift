@@ -18,7 +18,7 @@ class BMPlayerCustomControlView: BMPlayerControlView {
 
     override func customizeUIComponents()
     {
-        chooseDefitionView.removeFromSuperview()
+        chooseDefinitionView.removeFromSuperview()
         backButton.snp.updateConstraints { (make) in
             make.width.equalTo(200)
         }

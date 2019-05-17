@@ -7,10 +7,10 @@
 //
 
 import UIKit
-import BMPlayer
 import NVActivityIndicatorView
 import AVFoundation
 import MessageUI
+import BMPlayer
 
 class ChannelsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,MFMailComposeViewControllerDelegate {
 
