@@ -8,6 +8,7 @@
 
 import Foundation
 import GoogleMobileAds
+import SpriteKit
 
 class AdsManager:NSObject,GADBannerViewDelegate,GADInterstitialDelegate
 {

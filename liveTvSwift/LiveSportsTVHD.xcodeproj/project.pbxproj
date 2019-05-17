@@ -11,7 +11,6 @@
 		FB1FDD4120C458D900841047 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FDD4020C458D900841047 /* NewsViewController.swift */; };
 		FB1FDD4320C467E800841047 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FDD4220C467E800841047 /* NewsCell.swift */; };
 		FB2F876920C6A10500FE2958 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB2F876820C6A07200FE2958 /* GoogleService-Info.plist */; };
-		FB2FE2D720A0301900582A40 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB2FE2D620A0301800582A40 /* Kingfisher.framework */; };
 		FB38459420932CE900123B27 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB38459220932CE900123B27 /* EventViewController.swift */; };
 		FB38459520932CE900123B27 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB38459320932CE900123B27 /* CategoriesViewController.swift */; };
 		FB639901209C97FB0075BA19 /* ChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB639900209C97FB0075BA19 /* ChannelsViewController.swift */; };
@@ -53,9 +52,6 @@
 		FBBBDEE7209C8E4F00CAEAA8 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBBDEE6209C8E4F00CAEAA8 /* Toast.swift */; };
 		FBC9491320B0B28100925486 /* BMPlayerCustomControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC9491220B0B28000925486 /* BMPlayerCustomControlView.swift */; };
 		FBDEFC19209EC547003E8C6B /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDEFC18209EC547003E8C6B /* MoreViewController.swift */; };
-		FBDEFC20209ED88D003E8C6B /* BMPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBDEFC1F209ED88D003E8C6B /* BMPlayer.framework */; };
-		FBDEFC23209ED942003E8C6B /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBDEFC21209ED942003E8C6B /* NVActivityIndicatorView.framework */; };
-		FBDEFC24209ED942003E8C6B /* NVActivityIndicatorViewAppExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBDEFC22209ED942003E8C6B /* NVActivityIndicatorViewAppExtension.framework */; };
 		FBDEFC26209EDE32003E8C6B /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBDEFC25209EDE32003E8C6B /* SnapKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,7 +84,6 @@
 		FB1FDD4220C467E800841047 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		FB2F876820C6A07200FE2958 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FB2F876A20C6A40600FE2958 /* Live Sports TV HD.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Live Sports TV HD.entitlements"; sourceTree = "<group>"; };
-		FB2FE2D620A0301800582A40 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		FB38459220932CE900123B27 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		FB38459320932CE900123B27 /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		FB639900209C97FB0075BA19 /* ChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsViewController.swift; sourceTree = "<group>"; };
@@ -138,9 +133,6 @@
 		FBBBDEE6209C8E4F00CAEAA8 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		FBC9491220B0B28000925486 /* BMPlayerCustomControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMPlayerCustomControlView.swift; sourceTree = "<group>"; };
 		FBDEFC18209EC547003E8C6B /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
-		FBDEFC1F209ED88D003E8C6B /* BMPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BMPlayer.framework; path = Carthage/Build/iOS/BMPlayer.framework; sourceTree = "<group>"; };
-		FBDEFC21209ED942003E8C6B /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorView.framework; path = Carthage/Build/iOS/NVActivityIndicatorView.framework; sourceTree = "<group>"; };
-		FBDEFC22209ED942003E8C6B /* NVActivityIndicatorViewAppExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorViewAppExtension.framework; path = Carthage/Build/iOS/NVActivityIndicatorViewAppExtension.framework; sourceTree = "<group>"; };
 		FBDEFC25209EDE32003E8C6B /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,13 +147,9 @@
 				FBAD685820BD6A40009B46E3 /* CoreGraphics.framework in Frameworks */,
 				FBAD685620BD6A37009B46E3 /* Foundation.framework in Frameworks */,
 				FBAD685420BD6A2B009B46E3 /* StoreKit.framework in Frameworks */,
-				FB2FE2D720A0301900582A40 /* Kingfisher.framework in Frameworks */,
 				FBAD685220BD699A009B46E3 /* CHAMoatMobileAppKit.framework in Frameworks */,
-				FBDEFC20209ED88D003E8C6B /* BMPlayer.framework in Frameworks */,
-				FBDEFC23209ED942003E8C6B /* NVActivityIndicatorView.framework in Frameworks */,
 				FBAD685120BD6999009B46E3 /* Chartboost.framework in Frameworks */,
 				FBDEFC26209EDE32003E8C6B /* SnapKit.framework in Frameworks */,
-				FBDEFC24209ED942003E8C6B /* NVActivityIndicatorViewAppExtension.framework in Frameworks */,
 				8D64E8C061AD6646E536061C /* Pods_LiveSportsTVHD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,11 +360,7 @@
 				FBAD685720BD6A40009B46E3 /* CoreGraphics.framework */,
 				FBAD685520BD6A37009B46E3 /* Foundation.framework */,
 				FBAD685320BD6A2B009B46E3 /* StoreKit.framework */,
-				FB2FE2D620A0301800582A40 /* Kingfisher.framework */,
 				FBDEFC25209EDE32003E8C6B /* SnapKit.framework */,
-				FBDEFC21209ED942003E8C6B /* NVActivityIndicatorView.framework */,
-				FBDEFC22209ED942003E8C6B /* NVActivityIndicatorViewAppExtension.framework */,
-				FBDEFC1F209ED88D003E8C6B /* BMPlayer.framework */,
 				B5B5C0DA606A5892C868E185 /* Pods_LiveSportsTVHD.framework */,
 			);
 			name = Frameworks;
@@ -395,7 +379,6 @@
 				FBB5DD4520920A9900CE51FE /* Resources */,
 				FBDEFC27209EDFBF003E8C6B /* ShellScript */,
 				11BFCE8C1316013E7B1E5433 /* [CP] Embed Pods Frameworks */,
-				2DABDA188BFCE926A7F2AF60 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -534,37 +517,30 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-LiveSportsTVHD/Pods-LiveSportsTVHD-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-LiveSportsTVHD/Pods-LiveSportsTVHD-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BMPlayer/BMPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/FAPanels/FAPanels.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BMPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FAPanels.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LiveSportsTVHD/Pods-LiveSportsTVHD-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2DABDA188BFCE926A7F2AF60 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LiveSportsTVHD/Pods-LiveSportsTVHD-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LiveSportsTVHD/Pods-LiveSportsTVHD-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		41FCE7061F13DBC2BB802940 /* [CP] Check Pods Manifest.lock */ = {
@@ -591,21 +567,12 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/BMPlayer.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/NVActivityIndicatorView.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/NVActivityIndicatorViewAppExtension.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 			);
 			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/BMPlayer.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NVActivityIndicatorView.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NVActivityIndicatorViewAppExtension.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
